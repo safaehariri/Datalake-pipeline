@@ -1,28 +1,27 @@
 # Datalake-pipeline
 
-Vélib' Data Pipeline - Big Data Project
-Overview
+## Overview
 
-This project implements an end-to-end data pipeline to process and analyze Vélib' bike data in Paris. It automates data ingestion, transformation, and indexing using Apache Airflow, Spark, and Elasticsearch, enabling real-time insights into bike availability and station usage. The project is fully containerized using Docker and Docker Compose for easy deployment and portability.
+This project implements an end-to-end data pipeline for processing and analyzing Vélib' bike data in Paris. It automates the tasks of data ingestion, transformation, and indexing using **Apache Airflow**, **Spark**, and **Elasticsearch**, enabling real-time insights into bike availability and station usage. The entire project is containerized using Docker and Docker Compose to ensure easy deployment and portability.
 
-Technologies Used
+## Technologies Used
 
-Airflow – Task scheduling and workflow orchestration
-Spark – Data processing and transformation
-Elasticsearch & Kibana – Data indexing and visualization
-Docker & Docker Compose – Containerized deployment
-Parquet – Efficient data storage format
-Project Workflow
+- **Apache Airflow**: Task scheduling and workflow orchestration.
+- **Apache Spark**: Data processing and transformation.
+- **Elasticsearch & Kibana**: Data indexing and visualization.
+- **Docker & Docker Compose**: Containerized deployment.
+- **Parquet**: Efficient data storage format.
 
-Data Ingestion: Fetches real-time data from the Vélib' API using Airflow.
-Data Transformation: Uses Spark to clean, format, and convert JSON data into Parquet.
-Indexing: Stores processed data in Elasticsearch for efficient querying.
-Visualization: A Kibana dashboard provides insights into bike availability, station usage, and trends.
-How to Run the Project
+## Project Workflow
 
-To Run the data pipeline, run the script:
+1. **Data Ingestion**: Fetches real-time data from the Vélib' API using Apache Airflow.
+2. **Data Transformation**: Utilizes Apache Spark to clean, format, and convert JSON data into Parquet format.
+3. **Indexing**: Stores the processed data in Elasticsearch for efficient querying and analysis.
+4. **Visualization**: Provides insights into bike availability, station usage, and trends via a Kibana dashboard.
+
+## How to Run the Project
+
+To deploy and run the data pipeline, execute the following script:
+
+```bash
 ./run_containers.sh
-
-Access the services:
-Airflow UI: http://localhost:8080
-Kibana Dashboard: http://localhost:5601
