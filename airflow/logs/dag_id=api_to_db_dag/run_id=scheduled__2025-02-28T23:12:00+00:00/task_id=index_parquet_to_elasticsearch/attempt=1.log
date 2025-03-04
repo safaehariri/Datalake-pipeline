@@ -1,0 +1,19 @@
+[2025-02-28T23:14:17.792+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.index_parquet_to_elasticsearch scheduled__2025-02-28T23:12:00+00:00 [queued]>
+[2025-02-28T23:14:17.798+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.index_parquet_to_elasticsearch scheduled__2025-02-28T23:12:00+00:00 [queued]>
+[2025-02-28T23:14:17.798+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T23:14:17.807+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): index_parquet_to_elasticsearch> on 2025-02-28 23:12:00+00:00
+[2025-02-28T23:14:17.812+0000] {standard_task_runner.py:57} INFO - Started process 11813 to run task
+[2025-02-28T23:14:17.814+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'index_parquet_to_elasticsearch', 'scheduled__2025-02-28T23:12:00+00:00', '--job-id', '105', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpwm_m569c']
+[2025-02-28T23:14:17.816+0000] {standard_task_runner.py:85} INFO - Job 105: Subtask index_parquet_to_elasticsearch
+[2025-02-28T23:14:17.857+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.index_parquet_to_elasticsearch scheduled__2025-02-28T23:12:00+00:00 [running]> on host 6f198c45f89f
+[2025-02-28T23:14:17.914+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='index_parquet_to_elasticsearch' AIRFLOW_CTX_EXECUTION_DATE='2025-02-28T23:12:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-28T23:12:00+00:00'
+[2025-02-28T23:14:17.958+0000] {logging_mixin.py:149} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/array_algos/replace.py:84 FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+[2025-02-28T23:14:17.970+0000] {base.py:271} INFO - HEAD http://elasticsearch:9200/velib_analytics [status:200 request:0.008s]
+[2025-02-28T23:14:18.020+0000] {base.py:271} INFO - POST http://elasticsearch:9200/_bulk [status:200 request:0.028s]
+[2025-02-28T23:14:18.072+0000] {base.py:271} INFO - POST http://elasticsearch:9200/_bulk [status:200 request:0.040s]
+[2025-02-28T23:14:18.111+0000] {base.py:271} INFO - POST http://elasticsearch:9200/_bulk [status:200 request:0.029s]
+[2025-02-28T23:14:18.115+0000] {logging_mixin.py:149} INFO - Les données ont été ajoutées dans l'index 'velib_analytics'.
+[2025-02-28T23:14:18.117+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T23:14:18.149+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=index_parquet_to_elasticsearch, execution_date=20250228T231200, start_date=20250228T231417, end_date=20250228T231418
+[2025-02-28T23:14:18.199+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T23:14:18.212+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

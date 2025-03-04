@@ -1,0 +1,181 @@
+[2025-02-27T21:37:09.581+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.spark_join_task manual__2025-02-27T21:37:08.035762+00:00 [queued]>
+[2025-02-27T21:37:09.586+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.spark_join_task manual__2025-02-27T21:37:08.035762+00:00 [queued]>
+[2025-02-27T21:37:09.586+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-27T21:37:09.595+0000] {taskinstance.py:1350} INFO - Executing <Task(SparkSubmitOperator): spark_join_task> on 2025-02-27 21:37:08.035762+00:00
+[2025-02-27T21:37:09.601+0000] {standard_task_runner.py:57} INFO - Started process 3481 to run task
+[2025-02-27T21:37:09.605+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'spark_join_task', 'manual__2025-02-27T21:37:08.035762+00:00', '--job-id', '64', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmprc_05d2c']
+[2025-02-27T21:37:09.609+0000] {standard_task_runner.py:85} INFO - Job 64: Subtask spark_join_task
+[2025-02-27T21:37:09.661+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.spark_join_task manual__2025-02-27T21:37:08.035762+00:00 [running]> on host 53fdc8261bae
+[2025-02-27T21:37:09.901+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='spark_join_task' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T21:37:08.035762+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-27T21:37:08.035762+00:00'
+[2025-02-27T21:37:09.907+0000] {base.py:73} INFO - Using connection ID 'spark_default' for task execution.
+[2025-02-27T21:37:09.908+0000] {spark_submit.py:339} INFO - Spark-Submit cmd: spark-submit --master spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/bitnami/spark/jars/postgresql-42.7.5.jar --conf spark.executor.extraClassPath=/opt/bitnami/spark/jars/postgresql-42.7.5.jar --conf spark.jars=/opt/bitnami/spark/jars/postgresql-42.7.5.jar --name spark_join --verbose /opt/***/dags/spark_join.py
+[2025-02-27T21:37:10.880+0000] {spark_submit.py:490} INFO - Using properties file: null
+[2025-02-27T21:37:10.951+0000] {spark_submit.py:490} INFO - Parsed arguments:
+[2025-02-27T21:37:10.952+0000] {spark_submit.py:490} INFO - master                  spark-master:7077
+[2025-02-27T21:37:10.953+0000] {spark_submit.py:490} INFO - remote                  null
+[2025-02-27T21:37:10.953+0000] {spark_submit.py:490} INFO - deployMode              null
+[2025-02-27T21:37:10.953+0000] {spark_submit.py:490} INFO - executorMemory          null
+[2025-02-27T21:37:10.953+0000] {spark_submit.py:490} INFO - executorCores           null
+[2025-02-27T21:37:10.953+0000] {spark_submit.py:490} INFO - totalExecutorCores      null
+[2025-02-27T21:37:10.953+0000] {spark_submit.py:490} INFO - propertiesFile          null
+[2025-02-27T21:37:10.953+0000] {spark_submit.py:490} INFO - driverMemory            null
+[2025-02-27T21:37:10.954+0000] {spark_submit.py:490} INFO - driverCores             null
+[2025-02-27T21:37:10.954+0000] {spark_submit.py:490} INFO - driverExtraClassPath    /opt/bitnami/spark/jars/postgresql-42.7.5.jar
+[2025-02-27T21:37:10.954+0000] {spark_submit.py:490} INFO - driverExtraLibraryPath  null
+[2025-02-27T21:37:10.954+0000] {spark_submit.py:490} INFO - driverExtraJavaOptions  null
+[2025-02-27T21:37:10.954+0000] {spark_submit.py:490} INFO - supervise               false
+[2025-02-27T21:37:10.955+0000] {spark_submit.py:490} INFO - queue                   null
+[2025-02-27T21:37:10.955+0000] {spark_submit.py:490} INFO - numExecutors            null
+[2025-02-27T21:37:10.955+0000] {spark_submit.py:490} INFO - files                   null
+[2025-02-27T21:37:10.955+0000] {spark_submit.py:490} INFO - pyFiles                 null
+[2025-02-27T21:37:10.955+0000] {spark_submit.py:490} INFO - archives                null
+[2025-02-27T21:37:10.955+0000] {spark_submit.py:490} INFO - mainClass               null
+[2025-02-27T21:37:10.955+0000] {spark_submit.py:490} INFO - primaryResource         file:/opt/***/dags/spark_join.py
+[2025-02-27T21:37:10.955+0000] {spark_submit.py:490} INFO - name                    spark_join
+[2025-02-27T21:37:10.956+0000] {spark_submit.py:490} INFO - childArgs               []
+[2025-02-27T21:37:10.956+0000] {spark_submit.py:490} INFO - jars                    /opt/bitnami/spark/jars/postgresql-42.7.5.jar
+[2025-02-27T21:37:10.956+0000] {spark_submit.py:490} INFO - packages                null
+[2025-02-27T21:37:10.956+0000] {spark_submit.py:490} INFO - packagesExclusions      null
+[2025-02-27T21:37:10.956+0000] {spark_submit.py:490} INFO - repositories            null
+[2025-02-27T21:37:10.956+0000] {spark_submit.py:490} INFO - verbose                 true
+[2025-02-27T21:37:10.956+0000] {spark_submit.py:490} INFO - 
+[2025-02-27T21:37:10.956+0000] {spark_submit.py:490} INFO - Spark properties used, including those specified through
+[2025-02-27T21:37:10.956+0000] {spark_submit.py:490} INFO - --conf and those from the properties file null:
+[2025-02-27T21:37:10.956+0000] {spark_submit.py:490} INFO - (spark.driver.extraClassPath,/opt/bitnami/spark/jars/postgresql-42.7.5.jar)
+[2025-02-27T21:37:10.957+0000] {spark_submit.py:490} INFO - (spark.executor.extraClassPath,/opt/bitnami/spark/jars/postgresql-42.7.5.jar)
+[2025-02-27T21:37:10.957+0000] {spark_submit.py:490} INFO - (spark.jars,/opt/bitnami/spark/jars/postgresql-42.7.5.jar)
+[2025-02-27T21:37:10.957+0000] {spark_submit.py:490} INFO - (spark.master,spark://spark-master:7077)
+[2025-02-27T21:37:10.957+0000] {spark_submit.py:490} INFO - 
+[2025-02-27T21:37:10.957+0000] {spark_submit.py:490} INFO - 
+[2025-02-27T21:37:11.222+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-02-27T21:37:11.331+0000] {spark_submit.py:490} INFO - Main class:
+[2025-02-27T21:37:11.331+0000] {spark_submit.py:490} INFO - org.apache.spark.deploy.PythonRunner
+[2025-02-27T21:37:11.332+0000] {spark_submit.py:490} INFO - Arguments:
+[2025-02-27T21:37:11.332+0000] {spark_submit.py:490} INFO - file:/opt/***/dags/spark_join.py
+[2025-02-27T21:37:11.332+0000] {spark_submit.py:490} INFO - null
+[2025-02-27T21:37:11.332+0000] {spark_submit.py:490} INFO - Spark config:
+[2025-02-27T21:37:11.336+0000] {spark_submit.py:490} INFO - (spark.app.name,spark_join)
+[2025-02-27T21:37:11.336+0000] {spark_submit.py:490} INFO - (spark.app.submitTime,1740692231322)
+[2025-02-27T21:37:11.336+0000] {spark_submit.py:490} INFO - (spark.driver.extraClassPath,/opt/bitnami/spark/jars/postgresql-42.7.5.jar)
+[2025-02-27T21:37:11.337+0000] {spark_submit.py:490} INFO - (spark.executor.extraClassPath,/opt/bitnami/spark/jars/postgresql-42.7.5.jar)
+[2025-02-27T21:37:11.337+0000] {spark_submit.py:490} INFO - (spark.jars,file:///opt/bitnami/spark/jars/postgresql-42.7.5.jar)
+[2025-02-27T21:37:11.337+0000] {spark_submit.py:490} INFO - (spark.master,spark-master:7077)
+[2025-02-27T21:37:11.339+0000] {spark_submit.py:490} INFO - (spark.repl.local.jars,file:///opt/bitnami/spark/jars/postgresql-42.7.5.jar)
+[2025-02-27T21:37:11.339+0000] {spark_submit.py:490} INFO - (spark.submit.deployMode,client)
+[2025-02-27T21:37:11.339+0000] {spark_submit.py:490} INFO - (spark.submit.pyFiles,)
+[2025-02-27T21:37:11.339+0000] {spark_submit.py:490} INFO - Classpath elements:
+[2025-02-27T21:37:11.339+0000] {spark_submit.py:490} INFO - file:///opt/bitnami/spark/jars/postgresql-42.7.5.jar
+[2025-02-27T21:37:11.339+0000] {spark_submit.py:490} INFO - 
+[2025-02-27T21:37:11.340+0000] {spark_submit.py:490} INFO - 
+[2025-02-27T21:37:11.880+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO SparkContext: Running Spark version 3.4.4
+[2025-02-27T21:37:11.902+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO ResourceUtils: ==============================================================
+[2025-02-27T21:37:11.903+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO ResourceUtils: No custom resources configured for spark.driver.
+[2025-02-27T21:37:11.904+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO ResourceUtils: ==============================================================
+[2025-02-27T21:37:11.904+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO SparkContext: Submitted application: JoinVelibTables
+[2025-02-27T21:37:11.916+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 4, script: , vendor: , memory -> name: memory, amount: 4096, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+[2025-02-27T21:37:11.924+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO ResourceProfile: Limiting resource is cpus at 4 tasks per executor
+[2025-02-27T21:37:11.925+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO ResourceProfileManager: Added ResourceProfile id: 0
+[2025-02-27T21:37:11.968+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO SecurityManager: Changing view acls to: ***
+[2025-02-27T21:37:11.968+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO SecurityManager: Changing modify acls to: ***
+[2025-02-27T21:37:11.969+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO SecurityManager: Changing view acls groups to:
+[2025-02-27T21:37:11.969+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO SecurityManager: Changing modify acls groups to:
+[2025-02-27T21:37:11.969+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:11 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: ***; groups with view permissions: EMPTY; users with modify permissions: ***; groups with modify permissions: EMPTY
+[2025-02-27T21:37:12.187+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO Utils: Successfully started service 'sparkDriver' on port 44583.
+[2025-02-27T21:37:12.230+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO SparkEnv: Registering MapOutputTracker
+[2025-02-27T21:37:12.279+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO SparkEnv: Registering BlockManagerMaster
+[2025-02-27T21:37:12.294+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+[2025-02-27T21:37:12.294+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+[2025-02-27T21:37:12.296+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+[2025-02-27T21:37:12.313+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO DiskBlockManager: Created local directory at /tmp/blockmgr-6b249544-e55b-4d9a-b4a9-7ba67fc114fd
+[2025-02-27T21:37:12.324+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO MemoryStore: MemoryStore started with capacity 434.4 MiB
+[2025-02-27T21:37:12.336+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO SparkEnv: Registering OutputCommitCoordinator
+[2025-02-27T21:37:12.437+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+[2025-02-27T21:37:12.489+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+[2025-02-27T21:37:12.525+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO SparkContext: Added JAR file:///opt/bitnami/spark/jars/postgresql-42.7.5.jar at spark://53fdc8261bae:44583/jars/postgresql-42.7.5.jar with timestamp 1740692231872
+[2025-02-27T21:37:12.587+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO StandaloneAppClient$ClientEndpoint: Connecting to master spark://spark-master:7077...
+[2025-02-27T21:37:12.619+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO TransportClientFactory: Successfully created connection to spark-master/172.18.0.3:7077 after 20 ms (0 ms spent in bootstraps)
+[2025-02-27T21:37:12.702+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO StandaloneSchedulerBackend: Connected to Spark cluster with app ID app-20250227213712-0008
+[2025-02-27T21:37:12.704+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO StandaloneAppClient$ClientEndpoint: Executor added: app-20250227213712-0008/0 on worker-20250227203627-172.18.0.4-43141 (172.18.0.4:43141) with 4 core(s)
+[2025-02-27T21:37:12.704+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO StandaloneSchedulerBackend: Granted executor ID app-20250227213712-0008/0 on hostPort 172.18.0.4:43141 with 4 core(s), 4.0 GiB RAM
+[2025-02-27T21:37:12.710+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 36529.
+[2025-02-27T21:37:12.714+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO NettyBlockTransferService: Server created on 53fdc8261bae:36529
+[2025-02-27T21:37:12.714+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+[2025-02-27T21:37:12.723+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, 53fdc8261bae, 36529, None)
+[2025-02-27T21:37:12.727+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO BlockManagerMasterEndpoint: Registering block manager 53fdc8261bae:36529 with 434.4 MiB RAM, BlockManagerId(driver, 53fdc8261bae, 36529, None)
+[2025-02-27T21:37:12.729+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, 53fdc8261bae, 36529, None)
+[2025-02-27T21:37:12.730+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, 53fdc8261bae, 36529, None)
+[2025-02-27T21:37:12.779+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO StandaloneAppClient$ClientEndpoint: Executor updated: app-20250227213712-0008/0 is now RUNNING
+[2025-02-27T21:37:12.907+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:12 INFO StandaloneSchedulerBackend: SchedulerBackend is ready for scheduling beginning after reached minRegisteredResourcesRatio: 0.0
+[2025-02-27T21:37:12.929+0000] {spark_submit.py:490} INFO - /home/***/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/context.py:317: FutureWarning: Python 3.7 support is deprecated in Spark 3.4.
+[2025-02-27T21:37:12.930+0000] {spark_submit.py:490} INFO - warnings.warn("Python 3.7 support is deprecated in Spark 3.4.", FutureWarning)
+[2025-02-27T21:37:13.047+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO SharedState: Setting hive.metastore.warehouse.dir ('null') to the value of spark.sql.warehouse.dir.
+[2025-02-27T21:37:13.049+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO SharedState: Warehouse path is 'file:/opt/***/spark-warehouse'.
+[2025-02-27T21:37:13.862+0000] {spark_submit.py:490} INFO - Traceback (most recent call last):
+[2025-02-27T21:37:13.864+0000] {spark_submit.py:490} INFO - File "/opt/***/dags/spark_join.py", line 41, in <module>
+[2025-02-27T21:37:13.864+0000] {spark_submit.py:490} INFO - main()
+[2025-02-27T21:37:13.865+0000] {spark_submit.py:490} INFO - File "/opt/***/dags/spark_join.py", line 22, in main
+[2025-02-27T21:37:13.865+0000] {spark_submit.py:490} INFO - stations_df = spark.read.jdbc(url=jdbc_url, table="velib_stations", properties=connection_properties)
+[2025-02-27T21:37:13.865+0000] {spark_submit.py:490} INFO - File "/home/***/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/readwriter.py", line 927, in jdbc
+[2025-02-27T21:37:13.866+0000] {spark_submit.py:490} INFO - File "/home/***/.local/lib/python3.7/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/java_gateway.py", line 1323, in __call__
+[2025-02-27T21:37:13.866+0000] {spark_submit.py:490} INFO - File "/home/***/.local/lib/python3.7/site-packages/pyspark/python/lib/pyspark.zip/pyspark/errors/exceptions/captured.py", line 169, in deco
+[2025-02-27T21:37:13.867+0000] {spark_submit.py:490} INFO - File "/home/***/.local/lib/python3.7/site-packages/pyspark/python/lib/py4j-0.10.9.7-src.zip/py4j/protocol.py", line 328, in get_return_value
+[2025-02-27T21:37:13.871+0000] {spark_submit.py:490} INFO - py4j.protocol.Py4JJavaError: An error occurred while calling o35.jdbc.
+[2025-02-27T21:37:13.871+0000] {spark_submit.py:490} INFO - : org.postgresql.util.PSQLException: ERROR: relation "velib_stations" does not exist
+[2025-02-27T21:37:13.872+0000] {spark_submit.py:490} INFO - Position: 15
+[2025-02-27T21:37:13.872+0000] {spark_submit.py:490} INFO - at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+[2025-02-27T21:37:13.873+0000] {spark_submit.py:490} INFO - at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+[2025-02-27T21:37:13.873+0000] {spark_submit.py:490} INFO - at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+[2025-02-27T21:37:13.873+0000] {spark_submit.py:490} INFO - at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+[2025-02-27T21:37:13.873+0000] {spark_submit.py:490} INFO - at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+[2025-02-27T21:37:13.874+0000] {spark_submit.py:490} INFO - at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+[2025-02-27T21:37:13.874+0000] {spark_submit.py:490} INFO - at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+[2025-02-27T21:37:13.874+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.datasources.jdbc.JDBCRDD$.getQueryOutputSchema(JDBCRDD.scala:68)
+[2025-02-27T21:37:13.874+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.datasources.jdbc.JDBCRDD$.resolveTable(JDBCRDD.scala:58)
+[2025-02-27T21:37:13.874+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.datasources.jdbc.JDBCRelation$.getSchema(JDBCRelation.scala:241)
+[2025-02-27T21:37:13.874+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.datasources.jdbc.JdbcRelationProvider.createRelation(JdbcRelationProvider.scala:37)
+[2025-02-27T21:37:13.874+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.execution.datasources.DataSource.resolveRelation(DataSource.scala:346)
+[2025-02-27T21:37:13.874+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.DataFrameReader.loadV1Source(DataFrameReader.scala:229)
+[2025-02-27T21:37:13.874+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.DataFrameReader.$anonfun$load$2(DataFrameReader.scala:211)
+[2025-02-27T21:37:13.875+0000] {spark_submit.py:490} INFO - at scala.Option.getOrElse(Option.scala:189)
+[2025-02-27T21:37:13.875+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:211)
+[2025-02-27T21:37:13.875+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.DataFrameReader.load(DataFrameReader.scala:172)
+[2025-02-27T21:37:13.875+0000] {spark_submit.py:490} INFO - at org.apache.spark.sql.DataFrameReader.jdbc(DataFrameReader.scala:249)
+[2025-02-27T21:37:13.875+0000] {spark_submit.py:490} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+[2025-02-27T21:37:13.875+0000] {spark_submit.py:490} INFO - at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+[2025-02-27T21:37:13.875+0000] {spark_submit.py:490} INFO - at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2025-02-27T21:37:13.875+0000] {spark_submit.py:490} INFO - at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+[2025-02-27T21:37:13.875+0000] {spark_submit.py:490} INFO - at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+[2025-02-27T21:37:13.876+0000] {spark_submit.py:490} INFO - at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+[2025-02-27T21:37:13.876+0000] {spark_submit.py:490} INFO - at py4j.Gateway.invoke(Gateway.java:282)
+[2025-02-27T21:37:13.876+0000] {spark_submit.py:490} INFO - at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+[2025-02-27T21:37:13.876+0000] {spark_submit.py:490} INFO - at py4j.commands.CallCommand.execute(CallCommand.java:79)
+[2025-02-27T21:37:13.876+0000] {spark_submit.py:490} INFO - at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+[2025-02-27T21:37:13.876+0000] {spark_submit.py:490} INFO - at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+[2025-02-27T21:37:13.876+0000] {spark_submit.py:490} INFO - at java.base/java.lang.Thread.run(Thread.java:829)
+[2025-02-27T21:37:13.876+0000] {spark_submit.py:490} INFO - 
+[2025-02-27T21:37:13.894+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO SparkContext: Invoking stop() from shutdown hook
+[2025-02-27T21:37:13.896+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO SparkContext: SparkContext is stopping with exitCode 0.
+[2025-02-27T21:37:13.902+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO SparkUI: Stopped Spark web UI at http://53fdc8261bae:4040
+[2025-02-27T21:37:13.905+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO StandaloneSchedulerBackend: Shutting down all executors
+[2025-02-27T21:37:13.907+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO StandaloneSchedulerBackend$StandaloneDriverEndpoint: Asking each executor to shut down
+[2025-02-27T21:37:13.929+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO MapOutputTrackerMasterEndpoint: MapOutputTrackerMasterEndpoint stopped!
+[2025-02-27T21:37:13.939+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO MemoryStore: MemoryStore cleared
+[2025-02-27T21:37:13.941+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO BlockManager: BlockManager stopped
+[2025-02-27T21:37:13.943+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO BlockManagerMaster: BlockManagerMaster stopped
+[2025-02-27T21:37:13.945+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO OutputCommitCoordinator$OutputCommitCoordinatorEndpoint: OutputCommitCoordinator stopped!
+[2025-02-27T21:37:13.951+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO SparkContext: Successfully stopped SparkContext
+[2025-02-27T21:37:13.952+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO ShutdownHookManager: Shutdown hook called
+[2025-02-27T21:37:13.952+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO ShutdownHookManager: Deleting directory /tmp/spark-5455b388-28f2-4eb3-b9a0-36ea491602b7
+[2025-02-27T21:37:13.957+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO ShutdownHookManager: Deleting directory /tmp/spark-55a98bc6-37a8-4dfb-9d60-84c10b67863a/pyspark-52f34b3a-1b41-4244-8fc0-cc2a35faf16f
+[2025-02-27T21:37:13.961+0000] {spark_submit.py:490} INFO - 25/02/27 21:37:13 INFO ShutdownHookManager: Deleting directory /tmp/spark-55a98bc6-37a8-4dfb-9d60-84c10b67863a
+[2025-02-27T21:37:14.016+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/operators/spark_submit.py", line 157, in execute
+    self._hook.submit(self._application)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/apache/spark/hooks/spark_submit.py", line 422, in submit
+    f"Cannot execute: {self._mask_cmd(spark_submit_cmd)}. Error code is: {returncode}."
+airflow.exceptions.AirflowException: Cannot execute: spark-submit --master spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/bitnami/spark/jars/postgresql-42.7.5.jar --conf spark.executor.extraClassPath=/opt/bitnami/spark/jars/postgresql-42.7.5.jar --conf spark.jars=/opt/bitnami/spark/jars/postgresql-42.7.5.jar --name spark_join --verbose /opt/***/dags/spark_join.py. Error code is: 1.
+[2025-02-27T21:37:14.019+0000] {taskinstance.py:1373} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=spark_join_task, execution_date=20250227T213708, start_date=20250227T213709, end_date=20250227T213714
+[2025-02-27T21:37:14.027+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 64 for task spark_join_task (Cannot execute: spark-submit --master spark-master:7077 --conf spark.master=spark://spark-master:7077 --conf spark.driver.extraClassPath=/opt/bitnami/spark/jars/postgresql-42.7.5.jar --conf spark.executor.extraClassPath=/opt/bitnami/spark/jars/postgresql-42.7.5.jar --conf spark.jars=/opt/bitnami/spark/jars/postgresql-42.7.5.jar --name spark_join --verbose /opt/***/dags/spark_join.py. Error code is: 1.; 3481)
+[2025-02-27T21:37:14.069+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2025-02-27T21:37:14.094+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

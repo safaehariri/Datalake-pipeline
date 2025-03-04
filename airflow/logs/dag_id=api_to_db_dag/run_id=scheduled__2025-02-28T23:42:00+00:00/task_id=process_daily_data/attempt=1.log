@@ -1,0 +1,14 @@
+[2025-02-28T23:44:07.461+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_daily_data scheduled__2025-02-28T23:42:00+00:00 [queued]>
+[2025-02-28T23:44:07.467+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_daily_data scheduled__2025-02-28T23:42:00+00:00 [queued]>
+[2025-02-28T23:44:07.467+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T23:44:07.474+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_daily_data> on 2025-02-28 23:42:00+00:00
+[2025-02-28T23:44:07.477+0000] {standard_task_runner.py:57} INFO - Started process 5735 to run task
+[2025-02-28T23:44:07.480+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_daily_data', 'scheduled__2025-02-28T23:42:00+00:00', '--job-id', '47', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpvhhkao0y']
+[2025-02-28T23:44:07.481+0000] {standard_task_runner.py:85} INFO - Job 47: Subtask process_daily_data
+[2025-02-28T23:44:07.514+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_daily_data scheduled__2025-02-28T23:42:00+00:00 [running]> on host d71706374825
+[2025-02-28T23:44:07.562+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_daily_data' AIRFLOW_CTX_EXECUTION_DATE='2025-02-28T23:42:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-28T23:42:00+00:00'
+[2025-02-28T23:44:09.591+0000] {logging_mixin.py:149} WARNING - /home/***/.local/lib/python3.7/site-packages/pyspark/context.py:317 FutureWarning: Python 3.7 support is deprecated in Spark 3.4.
+[2025-02-28T23:44:14.092+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T23:44:14.102+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_daily_data, execution_date=20250228T234200, start_date=20250228T234407, end_date=20250228T234414
+[2025-02-28T23:44:14.155+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T23:44:14.173+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

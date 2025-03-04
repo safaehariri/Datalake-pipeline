@@ -1,0 +1,80 @@
+[2025-03-02T19:00:01.903+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:00:01.910+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:00:01.912+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-02T19:00:01.928+0000] {taskinstance.py:1350} INFO - Executing <Task(SimpleHttpOperator): get_velib_data> on 2025-03-02 18:45:00+00:00
+[2025-03-02T19:00:01.934+0000] {standard_task_runner.py:57} INFO - Started process 15424 to run task
+[2025-03-02T19:00:01.938+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'get_velib_data', 'scheduled__2025-03-02T18:45:00+00:00', '--job-id', '147', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp8go22btd']
+[2025-03-02T19:00:01.941+0000] {standard_task_runner.py:85} INFO - Job 147: Subtask get_velib_data
+[2025-03-02T19:00:01.977+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [running]> on host 3befbd719c1b
+[2025-03-02T19:00:02.030+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='get_velib_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T18:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-02T18:45:00+00:00'
+[2025-03-02T19:00:02.031+0000] {http.py:123} INFO - Calling HTTP method
+[2025-03-02T19:00:02.036+0000] {base.py:73} INFO - Using connection ID 'velib_api_connection' for task execution.
+[2025-03-02T19:00:02.283+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=get_velib_data, execution_date=20250302T184500, start_date=20250302T190001, end_date=20250302T190002
+[2025-03-02T19:00:02.322+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-03-02T19:00:02.341+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-02T19:01:51.064+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:01:51.074+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:01:51.075+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-02T19:01:51.092+0000] {taskinstance.py:1350} INFO - Executing <Task(SimpleHttpOperator): get_velib_data> on 2025-03-02 18:45:00+00:00
+[2025-03-02T19:01:51.105+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-03-02T19:01:51.105+0000] {standard_task_runner.py:57} INFO - Started process 20688 to run task
+[2025-03-02T19:01:51.115+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'get_velib_data', 'scheduled__2025-03-02T18:45:00+00:00', '--job-id', '152', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp_taq796e']
+[2025-03-02T19:01:51.117+0000] {standard_task_runner.py:85} INFO - Job 152: Subtask get_velib_data
+[2025-03-02T19:01:51.217+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [running]> on host 3befbd719c1b
+[2025-03-02T19:01:51.315+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='get_velib_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T18:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-02T18:45:00+00:00'
+[2025-03-02T19:01:51.316+0000] {http.py:123} INFO - Calling HTTP method
+[2025-03-02T19:01:51.324+0000] {base.py:73} INFO - Using connection ID 'velib_api_connection' for task execution.
+[2025-03-02T19:01:51.556+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=get_velib_data, execution_date=20250302T184500, start_date=20250302T190151, end_date=20250302T190151
+[2025-03-02T19:01:51.599+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-03-02T19:01:51.644+0000] {clientserver.py:505} INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2025-03-02T19:01:51.660+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-03-02T19:01:51.670+0000] {java_gateway.py:1052} INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 507, in send_command
+    "Error while sending", e, proto.ERROR_ON_SEND)
+py4j.protocol.Py4JNetworkError: Error while sending
+[2025-03-02T19:01:51.688+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-02T19:01:51.694+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-03-02T19:06:49.750+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:06:49.838+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:06:49.840+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-02T19:06:49.945+0000] {taskinstance.py:1350} INFO - Executing <Task(SimpleHttpOperator): get_velib_data> on 2025-03-02 18:45:00+00:00
+[2025-03-02T19:06:49.974+0000] {standard_task_runner.py:57} INFO - Started process 41983 to run task
+[2025-03-02T19:06:49.976+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-03-02T19:06:49.992+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'get_velib_data', 'scheduled__2025-03-02T18:45:00+00:00', '--job-id', '167', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpflu3kooy']
+[2025-03-02T19:06:49.999+0000] {standard_task_runner.py:85} INFO - Job 167: Subtask get_velib_data
+[2025-03-02T19:06:50.238+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [running]> on host 3befbd719c1b
+[2025-03-02T19:06:50.562+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='get_velib_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T18:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-02T18:45:00+00:00'
+[2025-03-02T19:06:50.567+0000] {http.py:123} INFO - Calling HTTP method
+[2025-03-02T19:06:50.605+0000] {base.py:73} INFO - Using connection ID 'velib_api_connection' for task execution.
+[2025-03-02T19:06:50.929+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=get_velib_data, execution_date=20250302T184500, start_date=20250302T190649, end_date=20250302T190650
+[2025-03-02T19:06:51.096+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-03-02T19:06:51.348+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-03-02T19:07:17.067+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:07:17.088+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:07:17.092+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-02T19:07:17.124+0000] {taskinstance.py:1350} INFO - Executing <Task(SimpleHttpOperator): get_velib_data> on 2025-03-02 18:45:00+00:00
+[2025-03-02T19:07:17.174+0000] {standard_task_runner.py:57} INFO - Started process 43394 to run task
+[2025-03-02T19:07:17.178+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-03-02T19:07:17.196+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'get_velib_data', 'scheduled__2025-03-02T18:45:00+00:00', '--job-id', '173', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpial2kqg6']
+[2025-03-02T19:07:17.200+0000] {standard_task_runner.py:85} INFO - Job 173: Subtask get_velib_data
+[2025-03-02T19:07:17.319+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.get_velib_data scheduled__2025-03-02T18:45:00+00:00 [running]> on host 3befbd719c1b
+[2025-03-02T19:07:17.468+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='get_velib_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T18:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-02T18:45:00+00:00'
+[2025-03-02T19:07:17.471+0000] {http.py:123} INFO - Calling HTTP method
+[2025-03-02T19:07:17.510+0000] {base.py:73} INFO - Using connection ID 'velib_api_connection' for task execution.
+[2025-03-02T19:07:17.773+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=get_velib_data, execution_date=20250302T184500, start_date=20250302T190717, end_date=20250302T190717
+[2025-03-02T19:07:17.820+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-03-02T19:07:17.865+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

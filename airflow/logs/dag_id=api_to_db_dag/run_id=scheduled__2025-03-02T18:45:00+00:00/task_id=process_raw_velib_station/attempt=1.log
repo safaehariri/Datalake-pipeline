@@ -1,0 +1,752 @@
+[2025-03-02T19:00:04.949+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:00:04.963+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:00:04.965+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-02T19:00:04.979+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_velib_station> on 2025-03-02 18:45:00+00:00
+[2025-03-02T19:00:04.987+0000] {standard_task_runner.py:57} INFO - Started process 15479 to run task
+[2025-03-02T19:00:04.990+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_velib_station', 'scheduled__2025-03-02T18:45:00+00:00', '--job-id', '150', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpt_mlbd0h']
+[2025-03-02T19:00:04.993+0000] {standard_task_runner.py:85} INFO - Job 150: Subtask process_raw_velib_station
+[2025-03-02T19:00:05.032+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-03-02T18:45:00+00:00 [running]> on host 3befbd719c1b
+[2025-03-02T19:00:05.107+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_velib_station' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T18:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-02T18:45:00+00:00'
+[2025-03-02T19:00:05.110+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/lib/utils.py", line 23, in process_files_in_directory
+    function(full_path)
+TypeError: format_velib_data() missing 1 required positional argument: 'input_path'
+[2025-03-02T19:00:05.121+0000] {taskinstance.py:1373} INFO - Marking task as UP_FOR_RETRY. dag_id=api_to_db_dag, task_id=process_raw_velib_station, execution_date=20250302T184500, start_date=20250302T190004, end_date=20250302T190005
+[2025-03-02T19:00:05.129+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 150 for task process_raw_velib_station (format_velib_data() missing 1 required positional argument: 'input_path'; 15479)
+[2025-03-02T19:00:05.173+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2025-03-02T19:00:05.190+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-02T19:02:03.460+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:02:03.472+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:02:03.474+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-02T19:02:03.497+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_velib_station> on 2025-03-02 18:45:00+00:00
+[2025-03-02T19:02:03.512+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-03-02T19:02:03.511+0000] {standard_task_runner.py:57} INFO - Started process 21983 to run task
+[2025-03-02T19:02:03.518+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_velib_station', 'scheduled__2025-03-02T18:45:00+00:00', '--job-id', '160', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpz1_oq8m5']
+[2025-03-02T19:02:03.521+0000] {standard_task_runner.py:85} INFO - Job 160: Subtask process_raw_velib_station
+[2025-03-02T19:02:03.570+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-03-02T18:45:00+00:00 [running]> on host 3befbd719c1b
+[2025-03-02T19:02:03.807+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_velib_station' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T18:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-02T18:45:00+00:00'
+[2025-03-02T19:02:14.761+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503011730.json: An error occurred while calling o60.parquet.
+: java.io.FileNotFoundException: File file:/mnt/data/formatted/velib_api/velib_stations/20250301/202503011730.snappy.parquet/_temporary/0 does not exist
+	at org.apache.hadoop.fs.RawLocalFileSystem.listStatus(RawLocalFileSystem.java:597)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:1972)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:2014)
+	at org.apache.hadoop.fs.ChecksumFileSystem.listStatus(ChecksumFileSystem.java:761)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:1972)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:2014)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.getAllCommittedTaskPaths(FileOutputCommitter.java:334)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJobInternal(FileOutputCommitter.java:404)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJob(FileOutputCommitter.java:377)
+	at org.apache.parquet.hadoop.ParquetOutputCommitter.commitJob(ParquetOutputCommitter.java:48)
+	at org.apache.spark.internal.io.HadoopMapReduceCommitProtocol.commitJob(HadoopMapReduceCommitProtocol.scala:192)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$writeAndCommit$3(FileFormatWriter.scala:275)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.timeTakenMs(Utils.scala:640)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:275)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:304)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:190)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:190)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:104)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:488)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:133)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:856)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:387)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:360)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:239)
+	at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:789)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2025-03-02T19:02:19.649+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012130.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#180]
++- Relation [_corrupt_record#178] json
+[2025-03-02T19:02:20.656+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012219.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#192]
++- Relation [_corrupt_record#190] json
+[2025-03-02T19:02:25.474+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503011045.json: An error occurred while calling o221.parquet.
+: java.io.FileNotFoundException: File file:/mnt/data/formatted/velib_api/velib_stations/20250301/202503011045.snappy.parquet/_temporary/0 does not exist
+	at org.apache.hadoop.fs.RawLocalFileSystem.listStatus(RawLocalFileSystem.java:597)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:1972)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:2014)
+	at org.apache.hadoop.fs.ChecksumFileSystem.listStatus(ChecksumFileSystem.java:761)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:1972)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:2014)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.getAllCommittedTaskPaths(FileOutputCommitter.java:334)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJobInternal(FileOutputCommitter.java:404)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJob(FileOutputCommitter.java:377)
+	at org.apache.parquet.hadoop.ParquetOutputCommitter.commitJob(ParquetOutputCommitter.java:48)
+	at org.apache.spark.internal.io.HadoopMapReduceCommitProtocol.commitJob(HadoopMapReduceCommitProtocol.scala:192)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$writeAndCommit$3(FileFormatWriter.scala:275)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.timeTakenMs(Utils.scala:640)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:275)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:304)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:190)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:190)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:104)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:488)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:133)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:856)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:387)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:360)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:239)
+	at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:789)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2025-03-02T19:02:30.767+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503011245.json: An error occurred while calling o402.parquet.
+: org.apache.spark.SparkException: Unable to clear output directory file:/mnt/data/formatted/velib_api/velib_stations/20250301/202503011245.snappy.parquet prior to writing to it.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.cannotClearOutputDirectoryError(QueryExecutionErrors.scala:808)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.deleteMatchingPartitions(InsertIntoHadoopFsRelationCommand.scala:239)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:131)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:104)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:488)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:133)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:856)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:387)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:360)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:239)
+	at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:789)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2025-03-02T19:02:32.935+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503011930.json: An error occurred while calling o511.parquet.
+: java.io.FileNotFoundException: /mnt/data/formatted/velib_api/velib_stations/20250301/202503011930.snappy.parquet/_SUCCESS (No such file or directory)
+	at java.base/java.io.FileOutputStream.open0(Native Method)
+	at java.base/java.io.FileOutputStream.open(FileOutputStream.java:298)
+	at java.base/java.io.FileOutputStream.<init>(FileOutputStream.java:237)
+	at org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileOutputStream.<init>(RawLocalFileSystem.java:321)
+	at org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileOutputStream.<init>(RawLocalFileSystem.java:294)
+	at org.apache.hadoop.fs.RawLocalFileSystem.createOutputStreamWithMode(RawLocalFileSystem.java:439)
+	at org.apache.hadoop.fs.RawLocalFileSystem.create(RawLocalFileSystem.java:428)
+	at org.apache.hadoop.fs.RawLocalFileSystem.create(RawLocalFileSystem.java:459)
+	at org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer.<init>(ChecksumFileSystem.java:433)
+	at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:521)
+	at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+	at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+	at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+	at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+	at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1052)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJobInternal(FileOutputCommitter.java:440)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJob(FileOutputCommitter.java:377)
+	at org.apache.parquet.hadoop.ParquetOutputCommitter.commitJob(ParquetOutputCommitter.java:48)
+	at org.apache.spark.internal.io.HadoopMapReduceCommitProtocol.commitJob(HadoopMapReduceCommitProtocol.scala:192)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$writeAndCommit$3(FileFormatWriter.scala:275)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.timeTakenMs(Utils.scala:640)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:275)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:304)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:190)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:190)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:104)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:488)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:133)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:856)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:387)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:360)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:239)
+	at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:789)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2025-03-02T19:02:34.901+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012035.json: An error occurred while calling o584.parquet.
+: java.io.FileNotFoundException: File file:/mnt/data/formatted/velib_api/velib_stations/20250301/202503012035.snappy.parquet/_temporary/0 does not exist
+	at org.apache.hadoop.fs.RawLocalFileSystem.listStatus(RawLocalFileSystem.java:597)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:1972)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:2014)
+	at org.apache.hadoop.fs.ChecksumFileSystem.listStatus(ChecksumFileSystem.java:761)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:1972)
+	at org.apache.hadoop.fs.FileSystem.listStatus(FileSystem.java:2014)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.getAllCommittedTaskPaths(FileOutputCommitter.java:334)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJobInternal(FileOutputCommitter.java:404)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJob(FileOutputCommitter.java:377)
+	at org.apache.parquet.hadoop.ParquetOutputCommitter.commitJob(ParquetOutputCommitter.java:48)
+	at org.apache.spark.internal.io.HadoopMapReduceCommitProtocol.commitJob(HadoopMapReduceCommitProtocol.scala:192)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$writeAndCommit$3(FileFormatWriter.scala:275)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.timeTakenMs(Utils.scala:640)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:275)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:304)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:190)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:190)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:104)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:488)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:133)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:856)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:387)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:360)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:239)
+	at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:789)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2025-03-02T19:02:35.341+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012330.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1308]
++- Relation [_corrupt_record#1306] json
+[2025-03-02T19:02:35.645+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012100.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1320]
++- Relation [_corrupt_record#1318] json
+[2025-03-02T19:02:36.710+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503011645.json: An error occurred while calling o673.parquet.
+: ExitCodeException exitCode=1: chmod: cannot access '/mnt/data/formatted/velib_api/velib_stations/20250301/202503011645.snappy.parquet/._SUCCESS.crc': No such file or directory
+
+	at org.apache.hadoop.util.Shell.runCommand(Shell.java:1007)
+	at org.apache.hadoop.util.Shell.run(Shell.java:900)
+	at org.apache.hadoop.util.Shell$ShellCommandExecutor.execute(Shell.java:1212)
+	at org.apache.hadoop.util.Shell.execCommand(Shell.java:1306)
+	at org.apache.hadoop.util.Shell.execCommand(Shell.java:1288)
+	at org.apache.hadoop.fs.RawLocalFileSystem.setPermission(RawLocalFileSystem.java:978)
+	at org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileOutputStream.<init>(RawLocalFileSystem.java:324)
+	at org.apache.hadoop.fs.RawLocalFileSystem$LocalFSFileOutputStream.<init>(RawLocalFileSystem.java:294)
+	at org.apache.hadoop.fs.RawLocalFileSystem.createOutputStreamWithMode(RawLocalFileSystem.java:439)
+	at org.apache.hadoop.fs.RawLocalFileSystem.create(RawLocalFileSystem.java:428)
+	at org.apache.hadoop.fs.RawLocalFileSystem.create(RawLocalFileSystem.java:459)
+	at org.apache.hadoop.fs.ChecksumFileSystem$ChecksumFSOutputSummer.<init>(ChecksumFileSystem.java:437)
+	at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:521)
+	at org.apache.hadoop.fs.ChecksumFileSystem.create(ChecksumFileSystem.java:500)
+	at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1195)
+	at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1175)
+	at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1064)
+	at org.apache.hadoop.fs.FileSystem.create(FileSystem.java:1052)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJobInternal(FileOutputCommitter.java:440)
+	at org.apache.hadoop.mapreduce.lib.output.FileOutputCommitter.commitJob(FileOutputCommitter.java:377)
+	at org.apache.parquet.hadoop.ParquetOutputCommitter.commitJob(ParquetOutputCommitter.java:48)
+	at org.apache.spark.internal.io.HadoopMapReduceCommitProtocol.commitJob(HadoopMapReduceCommitProtocol.scala:192)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$writeAndCommit$3(FileFormatWriter.scala:275)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.java:23)
+	at org.apache.spark.util.Utils$.timeTakenMs(Utils.scala:640)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:275)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:304)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:190)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:190)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:118)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:195)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:103)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:827)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:65)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:94)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(TreeNode.scala:104)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:512)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$$super$transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:31)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:488)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:94)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:81)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:79)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:133)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:856)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:387)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:360)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:239)
+	at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:789)
+	at jdk.internal.reflect.GeneratedMethodAccessor75.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+[2025-03-02T19:02:38.261+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012245.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1672]
++- Relation [_corrupt_record#1670] json
+[2025-03-02T19:02:38.554+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012300.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1684]
++- Relation [_corrupt_record#1682] json
+[2025-03-02T19:02:45.544+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012315.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#2546]
++- Relation [_corrupt_record#2544] json
+[2025-03-02T19:02:48.416+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012123.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#2983]
++- Relation [_corrupt_record#2981] json
+[2025-03-02T19:02:52.828+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012247.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#3505]
++- Relation [_corrupt_record#3503] json
+[2025-03-02T19:02:53.570+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012221.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#3602]
++- Relation [_corrupt_record#3600] json
+[2025-03-02T19:02:59.331+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012201.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4124]
++- Relation [_corrupt_record#4122] json
+[2025-03-02T19:03:00.265+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012145.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4136]
++- Relation [_corrupt_record#4134] json
+[2025-03-02T19:03:02.720+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012056.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4318]
++- Relation [_corrupt_record#4316] json
+[2025-03-02T19:03:05.819+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012216.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4585]
++- Relation [_corrupt_record#4583] json
+[2025-03-02T19:03:07.355+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012236.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4682]
++- Relation [_corrupt_record#4680] json
+[2025-03-02T19:03:08.805+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012220.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4779]
++- Relation [_corrupt_record#4777] json
+[2025-03-02T19:03:21.893+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250228/202502282226.json: [FIELD_NOT_FOUND] No such struct field `num_bikes_available_types` in `is_installed`, `is_renting`, `is_returning`, `last_reported`, `numBikesAvailable`, `numDocksAvailable`, `num_bikes_available`, `num_docks_available`, `stationCode`, `station_id`, `station_opening_hours`.
+[2025-03-02T19:03:22.358+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250228/202502281324.json: [FIELD_NOT_FOUND] No such struct field `num_bikes_available_types` in `is_installed`, `is_renting`, `is_returning`, `last_reported`, `numBikesAvailable`, `numDocksAvailable`, `num_bikes_available`, `num_docks_available`, `stationCode`, `station_id`, `station_opening_hours`.
+[2025-03-02T19:03:29.783+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250228/202502281724.json: [FIELD_NOT_FOUND] No such struct field `num_bikes_available_types` in `is_installed`, `is_renting`, `is_returning`, `last_reported`, `numBikesAvailable`, `numDocksAvailable`, `num_bikes_available`, `num_docks_available`, `stationCode`, `station_id`, `station_opening_hours`.
+[2025-03-02T19:04:35.386+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250228/202502282326.json: [FIELD_NOT_FOUND] No such struct field `num_bikes_available_types` in `is_installed`, `is_renting`, `is_returning`, `last_reported`, `numBikesAvailable`, `numDocksAvailable`, `num_bikes_available`, `num_docks_available`, `stationCode`, `station_id`, `station_opening_hours`.
+[2025-03-02T19:05:55.894+0000] {local_task_job_runner.py:299} WARNING - State of this instance has been externally set to None. Terminating instance.
+[2025-03-02T19:05:55.925+0000] {process_utils.py:135} INFO - Sending Signals.SIGTERM to group 21983. PIDs of all processes in the group: [21983]
+[2025-03-02T19:05:55.926+0000] {process_utils.py:86} INFO - Sending the signal Signals.SIGTERM to group 21983
+[2025-03-02T19:05:55.933+0000] {taskinstance.py:1540} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-03-02T19:05:55.956+0000] {clientserver.py:538} INFO - Error while receiving.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/local/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1542, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2025-03-02T19:05:56.037+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-03-02T19:05:56.041+0000] {java_gateway.py:1056} ERROR - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 511, in send_command
+    answer = smart_decode(self.stream.readline()[:-1])
+  File "/usr/local/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1542, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+airflow.exceptions.AirflowException: Task received SIGTERM signal
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 540, in send_command
+    "Error while sending or receiving", e, proto.ERROR_ON_RECEIVE)
+py4j.protocol.Py4JNetworkError: Error while sending or receiving
+[2025-03-02T19:05:56.048+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-03-02T19:05:56.050+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250227/202502272312.json: An error occurred while calling o7430.parquet
+[2025-03-02T19:06:06.377+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021851.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17422]
++- Relation [_corrupt_record#17420] json
+[2025-03-02T19:06:08.484+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021345.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17434]
++- Relation [_corrupt_record#17432] json
+[2025-03-02T19:06:10.294+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021715.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17446]
++- Relation [_corrupt_record#17444] json
+[2025-03-02T19:06:12.674+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021830.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17458]
++- Relation [_corrupt_record#17456] json
+[2025-03-02T19:06:14.763+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021430.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17470]
++- Relation [_corrupt_record#17468] json
+[2025-03-02T19:06:17.187+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021630.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17482]
++- Relation [_corrupt_record#17480] json
+[2025-03-02T19:06:18.956+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021734.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17494]
++- Relation [_corrupt_record#17492] json
+[2025-03-02T19:06:19.913+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021554.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17506]
++- Relation [_corrupt_record#17504] json
+[2025-03-02T19:06:20.656+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021800.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17518]
++- Relation [_corrupt_record#17516] json
+[2025-03-02T19:06:22.949+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021400.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17530]
++- Relation [_corrupt_record#17528] json
+[2025-03-02T19:06:24.641+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021745.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17542]
++- Relation [_corrupt_record#17540] json
+[2025-03-02T19:06:26.343+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021600.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17554]
++- Relation [_corrupt_record#17552] json
+[2025-03-02T19:06:28.817+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021548.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17566]
++- Relation [_corrupt_record#17564] json
+[2025-03-02T19:06:30.032+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021530.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17578]
++- Relation [_corrupt_record#17576] json
+[2025-03-02T19:06:31.598+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021615.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17590]
++- Relation [_corrupt_record#17588] json
+[2025-03-02T19:06:34.253+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021854.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17602]
++- Relation [_corrupt_record#17600] json
+[2025-03-02T19:06:36.602+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021815.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17614]
++- Relation [_corrupt_record#17612] json
+[2025-03-02T19:06:37.842+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021527.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17626]
++- Relation [_corrupt_record#17624] json
+[2025-03-02T19:06:39.079+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021516.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17638]
++- Relation [_corrupt_record#17636] json
+[2025-03-02T19:06:41.779+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021845.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17650]
++- Relation [_corrupt_record#17648] json
+[2025-03-02T19:06:43.286+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021900.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17662]
++- Relation [_corrupt_record#17660] json
+[2025-03-02T19:06:44.474+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021500.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17674]
++- Relation [_corrupt_record#17672] json
+[2025-03-02T19:06:45.566+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021445.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17686]
++- Relation [_corrupt_record#17684] json
+[2025-03-02T19:06:46.606+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021901.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17698]
++- Relation [_corrupt_record#17696] json
+[2025-03-02T19:06:47.762+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021645.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17710]
++- Relation [_corrupt_record#17708] json
+[2025-03-02T19:06:48.849+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021700.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17722]
++- Relation [_corrupt_record#17720] json
+[2025-03-02T19:06:50.022+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021429.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17734]
++- Relation [_corrupt_record#17732] json
+[2025-03-02T19:06:50.050+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-03-02T19:06:50.218+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_velib_station, execution_date=20250302T184500, start_date=, end_date=20250302T190650
+[2025-03-02T19:06:50.282+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 160 for task process_raw_velib_station ((psycopg2.errors.UniqueViolation) duplicate key value violates unique constraint "dag_run_dag_id_execution_date_key"
+DETAIL:  Key (dag_id, execution_date)=(api_to_db_dag, 2025-03-02 18:45:00+00) already exists.
+
+[SQL: INSERT INTO dag_run (id, dag_id, queued_at, execution_date, start_date, end_date, state, run_id, creating_job_id, external_trigger, run_type, conf, data_interval_start, data_interval_end, last_scheduling_decision, dag_hash, log_template_id, updated_at) VALUES (%(id)s, %(dag_id)s, %(queued_at)s, %(execution_date)s, %(start_date)s, %(end_date)s, %(state)s, %(run_id)s, %(creating_job_id)s, %(external_trigger)s, %(run_type)s, %(conf)s, %(data_interval_start)s, %(data_interval_end)s, %(last_scheduling_decision)s, %(dag_hash)s, %(log_template_id)s, %(updated_at)s)]
+[parameters: {'id': 19, 'dag_id': 'api_to_db_dag', 'queued_at': datetime.datetime(2025, 3, 2, 19, 1, 44, 898133, tzinfo=Timezone('UTC')), 'execution_date': datetime.datetime(2025, 3, 2, 18, 45, tzinfo=Timezone('UTC')), 'start_date': datetime.datetime(2025, 3, 2, 19, 1, 44, 923011, tzinfo=Timezone('UTC')), 'end_date': None, 'state': 'running', 'run_id': 'scheduled__2025-03-02T18:45:00+00:00', 'creating_job_id': 84, 'external_trigger': False, 'run_type': 'scheduled', 'conf': <psycopg2.extensions.Binary object at 0xffff89d1d0f0>, 'data_interval_start': datetime.datetime(2025, 3, 2, 18, 45, tzinfo=Timezone('UTC')), 'data_interval_end': datetime.datetime(2025, 3, 2, 19, 0, tzinfo=Timezone('UTC')), 'last_scheduling_decision': datetime.datetime(2025, 3, 2, 19, 2, 2, 365090, tzinfo=Timezone('UTC')), 'dag_hash': '02478b0d9bfae15057430050998a44f8', 'log_template_id': 4, 'updated_at': datetime.datetime(2025, 3, 2, 19, 2, 2, 369190, tzinfo=Timezone('UTC'))}]
+(Background on this error at: https://sqlalche.me/e/14/gkpj); 21983)
+[2025-03-02T19:06:50.382+0000] {process_utils.py:79} INFO - Process psutil.Process(pid=21983, status='terminated', exitcode=1, started='19:02:02') (21983) terminated with exit code 1
+[2025-03-02T19:07:35.093+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:07:35.124+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-03-02T18:45:00+00:00 [queued]>
+[2025-03-02T19:07:35.127+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-02T19:07:35.152+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_velib_station> on 2025-03-02 18:45:00+00:00
+[2025-03-02T19:07:35.181+0000] {standard_task_runner.py:57} INFO - Started process 45230 to run task
+[2025-03-02T19:07:35.181+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-03-02T19:07:35.185+0000] {clientserver.py:505} INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+BrokenPipeError: [Errno 32] Broken pipe
+[2025-03-02T19:07:35.187+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-03-02T19:07:35.189+0000] {java_gateway.py:1052} INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 507, in send_command
+    "Error while sending", e, proto.ERROR_ON_SEND)
+py4j.protocol.Py4JNetworkError: Error while sending
+[2025-03-02T19:07:35.191+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_velib_station', 'scheduled__2025-03-02T18:45:00+00:00', '--job-id', '177', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpl9og6mq9']
+[2025-03-02T19:07:35.193+0000] {standard_task_runner.py:85} INFO - Job 177: Subtask process_raw_velib_station
+[2025-03-02T19:07:35.194+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-03-02T19:07:35.243+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-03-02T18:45:00+00:00 [running]> on host 3befbd719c1b
+[2025-03-02T19:07:35.350+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_velib_station' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T18:45:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-02T18:45:00+00:00'
+[2025-03-02T19:07:54.306+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012130.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#180]
++- Relation [_corrupt_record#178] json
+[2025-03-02T19:07:55.321+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012219.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#192]
++- Relation [_corrupt_record#190] json
+[2025-03-02T19:08:10.874+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012330.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1309]
++- Relation [_corrupt_record#1307] json
+[2025-03-02T19:08:11.387+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012100.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1321]
++- Relation [_corrupt_record#1319] json
+[2025-03-02T19:08:15.957+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012245.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1673]
++- Relation [_corrupt_record#1671] json
+[2025-03-02T19:08:16.715+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012300.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1685]
++- Relation [_corrupt_record#1683] json
+[2025-03-02T19:08:28.283+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012315.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#2547]
++- Relation [_corrupt_record#2545] json
+[2025-03-02T19:08:34.717+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012123.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#2984]
++- Relation [_corrupt_record#2982] json
+[2025-03-02T19:08:41.242+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012247.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#3506]
++- Relation [_corrupt_record#3504] json
+[2025-03-02T19:08:43.218+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012221.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#3603]
++- Relation [_corrupt_record#3601] json
+[2025-03-02T19:08:49.595+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012201.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4125]
++- Relation [_corrupt_record#4123] json
+[2025-03-02T19:08:50.297+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012145.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4137]
++- Relation [_corrupt_record#4135] json
+[2025-03-02T19:08:52.955+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012056.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4319]
++- Relation [_corrupt_record#4317] json
+[2025-03-02T19:08:55.908+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012216.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4586]
++- Relation [_corrupt_record#4584] json
+[2025-03-02T19:08:57.658+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012236.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4683]
++- Relation [_corrupt_record#4681] json
+[2025-03-02T19:08:59.234+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250301/202503012220.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#4780]
++- Relation [_corrupt_record#4778] json
+[2025-03-02T19:09:25.355+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250228/202502282226.json: [FIELD_NOT_FOUND] No such struct field `num_bikes_available_types` in `is_installed`, `is_renting`, `is_returning`, `last_reported`, `numBikesAvailable`, `numDocksAvailable`, `num_bikes_available`, `num_docks_available`, `stationCode`, `station_id`, `station_opening_hours`.
+[2025-03-02T19:09:25.620+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250228/202502281324.json: [FIELD_NOT_FOUND] No such struct field `num_bikes_available_types` in `is_installed`, `is_renting`, `is_returning`, `last_reported`, `numBikesAvailable`, `numDocksAvailable`, `num_bikes_available`, `num_docks_available`, `stationCode`, `station_id`, `station_opening_hours`.
+[2025-03-02T19:09:38.896+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250228/202502281724.json: [FIELD_NOT_FOUND] No such struct field `num_bikes_available_types` in `is_installed`, `is_renting`, `is_returning`, `last_reported`, `numBikesAvailable`, `numDocksAvailable`, `num_bikes_available`, `num_docks_available`, `stationCode`, `station_id`, `station_opening_hours`.
+[2025-03-02T19:11:41.423+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250228/202502282326.json: [FIELD_NOT_FOUND] No such struct field `num_bikes_available_types` in `is_installed`, `is_renting`, `is_returning`, `last_reported`, `numBikesAvailable`, `numDocksAvailable`, `num_bikes_available`, `num_docks_available`, `stationCode`, `station_id`, `station_opening_hours`.
+[2025-03-02T19:12:54.988+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021851.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17423]
++- Relation [_corrupt_record#17421] json
+[2025-03-02T19:12:55.307+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021345.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17435]
++- Relation [_corrupt_record#17433] json
+[2025-03-02T19:12:55.597+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021715.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17447]
++- Relation [_corrupt_record#17445] json
+[2025-03-02T19:12:55.981+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021830.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17459]
++- Relation [_corrupt_record#17457] json
+[2025-03-02T19:12:56.199+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021430.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17471]
++- Relation [_corrupt_record#17469] json
+[2025-03-02T19:12:56.450+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021630.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17483]
++- Relation [_corrupt_record#17481] json
+[2025-03-02T19:12:56.900+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021734.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17495]
++- Relation [_corrupt_record#17493] json
+[2025-03-02T19:12:57.423+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021554.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17507]
++- Relation [_corrupt_record#17505] json
+[2025-03-02T19:12:57.727+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021800.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17519]
++- Relation [_corrupt_record#17517] json
+[2025-03-02T19:12:58.053+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021400.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17531]
++- Relation [_corrupt_record#17529] json
+[2025-03-02T19:12:58.275+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021745.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17543]
++- Relation [_corrupt_record#17541] json
+[2025-03-02T19:12:58.783+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021600.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17555]
++- Relation [_corrupt_record#17553] json
+[2025-03-02T19:12:59.037+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021548.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17567]
++- Relation [_corrupt_record#17565] json
+[2025-03-02T19:12:59.214+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021530.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17579]
++- Relation [_corrupt_record#17577] json
+[2025-03-02T19:12:59.365+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021615.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17591]
++- Relation [_corrupt_record#17589] json
+[2025-03-02T19:12:59.514+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021906.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17603]
++- Relation [_corrupt_record#17601] json
+[2025-03-02T19:12:59.721+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021854.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17615]
++- Relation [_corrupt_record#17613] json
+[2025-03-02T19:12:59.893+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021907.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17627]
++- Relation [_corrupt_record#17625] json
+[2025-03-02T19:13:00.126+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021815.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17639]
++- Relation [_corrupt_record#17637] json
+[2025-03-02T19:13:00.302+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021527.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17651]
++- Relation [_corrupt_record#17649] json
+[2025-03-02T19:13:00.516+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021516.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17663]
++- Relation [_corrupt_record#17661] json
+[2025-03-02T19:13:00.731+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021845.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17675]
++- Relation [_corrupt_record#17673] json
+[2025-03-02T19:13:00.878+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021900.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17687]
++- Relation [_corrupt_record#17685] json
+[2025-03-02T19:13:00.977+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021500.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17699]
++- Relation [_corrupt_record#17697] json
+[2025-03-02T19:13:01.153+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021445.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17711]
++- Relation [_corrupt_record#17709] json
+[2025-03-02T19:13:01.439+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021901.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17723]
++- Relation [_corrupt_record#17721] json
+[2025-03-02T19:13:01.623+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021645.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17735]
++- Relation [_corrupt_record#17733] json
+[2025-03-02T19:13:01.806+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021700.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17747]
++- Relation [_corrupt_record#17745] json
+[2025-03-02T19:13:02.073+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/velib_stations/20250302/202503021429.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#17759]
++- Relation [_corrupt_record#17757] json
+[2025-03-02T19:13:02.076+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-03-02T19:13:02.130+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_velib_station, execution_date=20250302T184500, start_date=20250302T190735, end_date=20250302T191302
+[2025-03-02T19:13:02.225+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-03-02T19:13:02.312+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

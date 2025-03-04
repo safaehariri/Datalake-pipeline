@@ -1,0 +1,13 @@
+[2025-02-27T21:01:54.960+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_details_information manual__2025-02-27T21:01:52.366236+00:00 [queued]>
+[2025-02-27T21:01:54.966+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_details_information manual__2025-02-27T21:01:52.366236+00:00 [queued]>
+[2025-02-27T21:01:54.966+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-27T21:01:54.974+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): save_station_details_information> on 2025-02-27 21:01:52.366236+00:00
+[2025-02-27T21:01:54.979+0000] {standard_task_runner.py:57} INFO - Started process 1476 to run task
+[2025-02-27T21:01:54.984+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'save_station_details_information', 'manual__2025-02-27T21:01:52.366236+00:00', '--job-id', '37', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpu2p6xvz2']
+[2025-02-27T21:01:54.986+0000] {standard_task_runner.py:85} INFO - Job 37: Subtask save_station_details_information
+[2025-02-27T21:01:55.034+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.save_station_details_information manual__2025-02-27T21:01:52.366236+00:00 [running]> on host 53fdc8261bae
+[2025-02-27T21:01:55.253+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='save_station_details_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T21:01:52.366236+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-27T21:01:52.366236+00:00'
+[2025-02-27T21:01:55.300+0000] {python.py:183} INFO - Done. Returned value was: /mnt/data/raw/velib_api/station_information/202502272101/extract.json
+[2025-02-27T21:01:55.315+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=save_station_details_information, execution_date=20250227T210152, start_date=20250227T210154, end_date=20250227T210155
+[2025-02-27T21:01:55.370+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-27T21:01:55.385+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

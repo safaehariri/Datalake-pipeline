@@ -1,0 +1,133 @@
+[2025-02-28T12:31:41.053+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:31:41.061+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:31:41.061+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T12:31:41.073+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): save_station_information> on 2025-02-27 00:00:00+00:00
+[2025-02-28T12:31:41.083+0000] {standard_task_runner.py:57} INFO - Started process 4342 to run task
+[2025-02-28T12:31:41.083+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:41.088+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'save_station_information', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpjf_xo0_q']
+[2025-02-28T12:31:41.090+0000] {standard_task_runner.py:85} INFO - Job 9: Subtask save_station_information
+[2025-02-28T12:31:41.176+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [running]> on host a0901dbddc07
+[2025-02-28T12:31:41.253+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='save_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T12:31:41.273+0000] {clientserver.py:505} INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2025-02-28T12:31:41.275+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:41.276+0000] {java_gateway.py:1052} INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 507, in send_command
+    "Error while sending", e, proto.ERROR_ON_SEND)
+py4j.protocol.Py4JNetworkError: Error while sending
+[2025-02-28T12:31:41.282+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:41.402+0000] {python.py:183} INFO - Done. Returned value was: /mnt/data/raw/velib_api/velib_stations/20250228/202502281231.json
+[2025-02-28T12:31:41.422+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=save_station_information, execution_date=20250227T000000, start_date=20250228T123141, end_date=20250228T123141
+[2025-02-28T12:31:41.473+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T12:31:41.494+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T12:38:30.156+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:38:30.163+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:38:30.164+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T12:38:30.176+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): save_station_information> on 2025-02-27 00:00:00+00:00
+[2025-02-28T12:38:30.182+0000] {standard_task_runner.py:57} INFO - Started process 1679 to run task
+[2025-02-28T12:38:30.182+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:38:30.189+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'save_station_information', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpf471v_2t']
+[2025-02-28T12:38:30.191+0000] {standard_task_runner.py:85} INFO - Job 6: Subtask save_station_information
+[2025-02-28T12:38:30.253+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [running]> on host 654b8dd452f4
+[2025-02-28T12:38:30.322+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='save_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T12:38:30.416+0000] {python.py:183} INFO - Done. Returned value was: /mnt/data/raw/velib_api/velib_stations/20250228/202502281238.json
+[2025-02-28T12:38:30.430+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=save_station_information, execution_date=20250227T000000, start_date=20250228T123830, end_date=20250228T123830
+[2025-02-28T12:38:30.449+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T12:38:30.480+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T13:00:44.759+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:00:44.766+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:00:44.766+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T13:00:44.777+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): save_station_information> on 2025-02-27 00:00:00+00:00
+[2025-02-28T13:00:44.782+0000] {standard_task_runner.py:57} INFO - Started process 2161 to run task
+[2025-02-28T13:00:44.782+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T13:00:44.786+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'save_station_information', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp66x8_6e3']
+[2025-02-28T13:00:44.788+0000] {standard_task_runner.py:85} INFO - Job 9: Subtask save_station_information
+[2025-02-28T13:00:44.819+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [running]> on host bedfa72ade93
+[2025-02-28T13:00:44.866+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='save_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T13:00:44.952+0000] {python.py:183} INFO - Done. Returned value was: /mnt/data/raw/velib_api/velib_stations/20250228/202502281300.json
+[2025-02-28T13:00:44.967+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=save_station_information, execution_date=20250227T000000, start_date=20250228T130044, end_date=20250228T130044
+[2025-02-28T13:00:45.003+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T13:00:45.027+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T13:24:10.275+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:24:10.283+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:24:10.286+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T13:24:10.298+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): save_station_information> on 2025-02-27 00:00:00+00:00
+[2025-02-28T13:24:10.303+0000] {standard_task_runner.py:57} INFO - Started process 1550 to run task
+[2025-02-28T13:24:10.303+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T13:24:10.307+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'save_station_information', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpdqcn_t1g']
+[2025-02-28T13:24:10.309+0000] {standard_task_runner.py:85} INFO - Job 9: Subtask save_station_information
+[2025-02-28T13:24:10.350+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [running]> on host 1c784c6426d5
+[2025-02-28T13:24:10.407+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='save_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T13:24:10.485+0000] {clientserver.py:505} INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2025-02-28T13:24:10.486+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T13:24:10.486+0000] {java_gateway.py:1052} INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 507, in send_command
+    "Error while sending", e, proto.ERROR_ON_SEND)
+py4j.protocol.Py4JNetworkError: Error while sending
+[2025-02-28T13:24:10.489+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T13:24:10.525+0000] {python.py:183} INFO - Done. Returned value was: /mnt/data/raw/velib_api/velib_stations/20250228/202502281324.json
+[2025-02-28T13:24:10.543+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=save_station_information, execution_date=20250227T000000, start_date=20250228T132410, end_date=20250228T132410
+[2025-02-28T13:24:10.568+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T13:24:10.585+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T14:13:52.335+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T14:13:52.346+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T14:13:52.346+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T14:13:52.357+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): save_station_information> on 2025-02-27 00:00:00+00:00
+[2025-02-28T14:13:52.361+0000] {standard_task_runner.py:57} INFO - Started process 2107 to run task
+[2025-02-28T14:13:52.362+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T14:13:52.366+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'save_station_information', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpnzj__d2c']
+[2025-02-28T14:13:52.367+0000] {standard_task_runner.py:85} INFO - Job 9: Subtask save_station_information
+[2025-02-28T14:13:52.403+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.save_station_information scheduled__2025-02-27T00:00:00+00:00 [running]> on host 2e469bce1432
+[2025-02-28T14:13:52.476+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='save_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T14:13:52.518+0000] {clientserver.py:505} INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2025-02-28T14:13:52.521+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T14:13:52.521+0000] {java_gateway.py:1052} INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 507, in send_command
+    "Error while sending", e, proto.ERROR_ON_SEND)
+py4j.protocol.Py4JNetworkError: Error while sending
+[2025-02-28T14:13:52.531+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T14:13:52.589+0000] {python.py:183} INFO - Done. Returned value was: /mnt/data/raw/velib_api/velib_stations/20250228/202502281413.json
+[2025-02-28T14:13:52.605+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=save_station_information, execution_date=20250227T000000, start_date=20250228T141352, end_date=20250228T141352
+[2025-02-28T14:13:52.626+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T14:13:52.652+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

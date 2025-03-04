@@ -1,0 +1,1106 @@
+[2025-02-26T15:27:47.393+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T15:27:47.400+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T15:27:47.401+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T15:27:47.401+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T15:27:47.401+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T15:27:47.409+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T15:27:47.412+0000] {standard_task_runner.py:55} INFO - Started process 180 to run task
+[2025-02-26T15:27:47.414+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpxenyje_o']
+[2025-02-26T15:27:47.416+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T15:27:47.466+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 56549796aa94
+[2025-02-26T15:27:47.512+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T15:27:47.513+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station_status (
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T15:27:47.520+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T15:27:47.702+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T15:27:47.704+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 331, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/postgres/hooks/postgres.py", line 144, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "postgres" (172.18.0.2), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+[2025-02-26T15:27:47.710+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T152747, end_date=20250226T152747
+[2025-02-26T15:27:47.717+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 2 for task create_velib_station_status_table (connection to server at "postgres" (172.18.0.2), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+; 180)
+[2025-02-26T15:27:47.761+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2025-02-26T15:27:47.779+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T15:54:42.068+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T15:54:42.075+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T15:54:42.075+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T15:54:42.076+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T15:54:42.076+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T15:54:42.083+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T15:54:42.086+0000] {standard_task_runner.py:55} INFO - Started process 181 to run task
+[2025-02-26T15:54:42.089+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpliwf73_g']
+[2025-02-26T15:54:42.090+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T15:54:42.134+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 34c04d17655a
+[2025-02-26T15:54:42.182+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T15:54:42.182+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station_status (
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T15:54:42.188+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T15:54:42.331+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T15:54:42.333+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 331, in run
+    with closing(self.get_conn()) as conn:
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/postgres/hooks/postgres.py", line 144, in get_conn
+    self.conn = psycopg2.connect(**conn_args)
+  File "/home/airflow/.local/lib/python3.7/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: connection to server at "postgres" (172.18.0.3), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+
+[2025-02-26T15:54:42.338+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T155442, end_date=20250226T155442
+[2025-02-26T15:54:42.345+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 2 for task create_velib_station_status_table (connection to server at "postgres" (172.18.0.3), port 5432 failed: FATAL:  password authentication failed for user "postgres"
+; 181)
+[2025-02-26T15:54:42.350+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2025-02-26T15:54:42.364+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T15:59:17.871+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T15:59:17.877+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T15:59:17.877+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T15:59:17.877+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T15:59:17.877+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T15:59:17.884+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T15:59:17.887+0000] {standard_task_runner.py:55} INFO - Started process 186 to run task
+[2025-02-26T15:59:17.889+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpml98c_uf']
+[2025-02-26T15:59:17.890+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T15:59:17.921+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host ecfbe5877a87
+[2025-02-26T15:59:17.989+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T15:59:17.989+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station_status (
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T15:59:17.994+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T15:59:18.119+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T15:59:18.121+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station_status (
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T15:59:18.128+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T155917, end_date=20250226T155918
+[2025-02-26T15:59:18.150+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T15:59:18.168+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T16:02:02.367+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T16:02:02.374+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T16:02:02.374+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T16:02:02.374+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T16:02:02.374+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T16:02:02.381+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T16:02:02.384+0000] {standard_task_runner.py:55} INFO - Started process 185 to run task
+[2025-02-26T16:02:02.386+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp0clhqtpw']
+[2025-02-26T16:02:02.387+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T16:02:02.425+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 9db23b9e0b5f
+[2025-02-26T16:02:02.477+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T16:02:02.478+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station_status (
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T16:02:02.484+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T16:02:02.651+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T16:02:02.653+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station_status (
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T16:02:02.660+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T160202, end_date=20250226T160202
+[2025-02-26T16:02:02.688+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T16:02:02.705+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T16:12:56.278+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T16:12:56.284+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T16:12:56.284+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T16:12:56.285+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T16:12:56.285+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T16:12:56.293+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T16:12:56.297+0000] {standard_task_runner.py:55} INFO - Started process 181 to run task
+[2025-02-26T16:12:56.299+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmps_f6wdc9']
+[2025-02-26T16:12:56.302+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T16:12:56.343+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 22b952259132
+[2025-02-26T16:12:56.393+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T16:12:56.394+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station_status (
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T16:12:56.399+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T16:12:56.532+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T16:12:56.534+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station_status (
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T16:12:56.540+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T161256, end_date=20250226T161256
+[2025-02-26T16:12:56.563+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T16:12:56.580+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T17:25:08.758+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:25:08.766+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:25:08.766+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:25:08.766+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T17:25:08.766+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:25:08.775+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T17:25:08.779+0000] {standard_task_runner.py:55} INFO - Started process 186 to run task
+[2025-02-26T17:25:08.782+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpv49js6me']
+[2025-02-26T17:25:08.784+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T17:25:08.826+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host c186b3fcbd74
+[2025-02-26T17:25:08.870+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T17:25:08.871+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station_status (
+                record_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T17:25:08.876+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:25:09.027+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:25:09.029+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station_status (
+                record_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T17:25:09.036+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T172508, end_date=20250226T172509
+[2025-02-26T17:25:09.086+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T17:25:09.101+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T17:28:28.512+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:28:28.520+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:28:28.520+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:28:28.520+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T17:28:28.520+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:28:28.527+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T17:28:28.531+0000] {standard_task_runner.py:55} INFO - Started process 180 to run task
+[2025-02-26T17:28:28.534+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpf68tjsoj']
+[2025-02-26T17:28:28.536+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T17:28:28.586+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host da5f2e293ce7
+[2025-02-26T17:28:28.652+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T17:28:28.652+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station(
+                record_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T17:28:28.659+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:28:28.798+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:28:28.800+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station(
+                record_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T17:28:28.807+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T172828, end_date=20250226T172828
+[2025-02-26T17:28:28.835+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T17:28:28.859+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T17:31:54.149+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:31:54.157+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:31:54.158+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:31:54.159+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T17:31:54.159+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:31:54.166+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T17:31:54.171+0000] {standard_task_runner.py:55} INFO - Started process 182 to run task
+[2025-02-26T17:31:54.174+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpgtmp56g7']
+[2025-02-26T17:31:54.176+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T17:31:54.215+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 77ec537a1947
+[2025-02-26T17:31:54.258+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T17:31:54.258+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station(
+                record_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T17:31:54.263+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:31:54.415+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:31:54.417+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station(
+                record_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T17:31:54.421+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 338, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 369, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_station, 2200) already exists.
+
+[2025-02-26T17:31:54.426+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T173154, end_date=20250226T173154
+[2025-02-26T17:31:54.432+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 2 for task create_velib_station_status_table (duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_station, 2200) already exists.
+; 182)
+[2025-02-26T17:31:54.475+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2025-02-26T17:31:54.489+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T17:35:05.357+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:35:05.363+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:35:05.363+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:35:05.363+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T17:35:05.363+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:35:05.370+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T17:35:05.373+0000] {standard_task_runner.py:55} INFO - Started process 181 to run task
+[2025-02-26T17:35:05.375+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpp5u2jkjs']
+[2025-02-26T17:35:05.377+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T17:35:05.414+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host cfe452b1d1c3
+[2025-02-26T17:35:05.467+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T17:35:05.468+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station(
+                record_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T17:35:05.472+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:35:05.619+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:35:05.621+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station(
+                record_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T17:35:05.628+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T173505, end_date=20250226T173505
+[2025-02-26T17:35:05.637+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T17:35:05.652+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T17:42:46.207+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:42:46.215+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:42:46.215+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:42:46.215+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T17:42:46.217+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:42:46.225+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T17:42:46.228+0000] {standard_task_runner.py:55} INFO - Started process 187 to run task
+[2025-02-26T17:42:46.229+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpwjn4oe06']
+[2025-02-26T17:42:46.230+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T17:42:46.267+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 846bc4def31e
+[2025-02-26T17:42:46.313+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T17:42:46.314+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station_status(
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T17:42:46.319+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:42:46.487+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:42:46.489+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station_status(
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T17:42:46.497+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T174246, end_date=20250226T174246
+[2025-02-26T17:42:46.537+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T17:42:46.555+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T17:44:37.780+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:44:37.788+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:44:37.789+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:44:37.790+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T17:44:37.791+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:44:37.799+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T17:44:37.802+0000] {standard_task_runner.py:55} INFO - Started process 183 to run task
+[2025-02-26T17:44:37.804+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp5hquselx']
+[2025-02-26T17:44:37.805+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T17:44:37.841+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host c783aa80544b
+[2025-02-26T17:44:37.884+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T17:44:37.884+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station_table(
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T17:44:37.889+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:44:38.014+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:44:38.016+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station_table(
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T17:44:38.022+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T174437, end_date=20250226T174438
+[2025-02-26T17:44:38.065+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T17:44:38.084+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T17:50:04.232+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:50:04.239+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:50:04.240+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:50:04.240+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T17:50:04.240+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:50:04.250+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T17:50:04.254+0000] {standard_task_runner.py:55} INFO - Started process 191 to run task
+[2025-02-26T17:50:04.257+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpqhswrlpl']
+[2025-02-26T17:50:04.261+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T17:50:04.300+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 9ac572fed58f
+[2025-02-26T17:50:04.345+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T17:50:04.345+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T17:50:04.350+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:50:04.492+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:50:04.499+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T17:50:04.501+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 338, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 369, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_stations, 2200) already exists.
+
+[2025-02-26T17:50:04.506+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T175004, end_date=20250226T175004
+[2025-02-26T17:50:04.512+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 2 for task create_velib_station_status_table (duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_stations, 2200) already exists.
+; 191)
+[2025-02-26T17:50:04.518+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2025-02-26T17:50:04.536+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T17:57:19.322+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:57:19.328+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T17:57:19.328+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:57:19.328+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T17:57:19.328+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T17:57:19.337+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T17:57:19.340+0000] {standard_task_runner.py:55} INFO - Started process 196 to run task
+[2025-02-26T17:57:19.342+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpzi3njz5g']
+[2025-02-26T17:57:19.343+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T17:57:19.382+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 110d01ca39ff
+[2025-02-26T17:57:19.424+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T17:57:19.425+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T17:57:19.429+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:57:19.584+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T17:57:19.587+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id INT,
+                is_installed BOOLEAN,
+                is_renting BOOLEAN,
+                is_returning BOOLEAN,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T17:57:19.594+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T175719, end_date=20250226T175719
+[2025-02-26T17:57:19.604+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T17:57:19.621+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T20:18:19.022+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T20:18:19.029+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T20:18:19.030+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T20:18:19.030+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T20:18:19.030+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T20:18:19.038+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T20:18:19.041+0000] {standard_task_runner.py:55} INFO - Started process 181 to run task
+[2025-02-26T20:18:19.045+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpsduw9o6e']
+[2025-02-26T20:18:19.046+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T20:18:19.087+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host da414a641e9d
+[2025-02-26T20:18:19.131+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T20:18:19.132+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id INT,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T20:18:19.137+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T20:18:19.284+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T20:18:19.287+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id INT,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T20:18:19.290+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 338, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 369, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_stations, 2200) already exists.
+
+[2025-02-26T20:18:19.295+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T201819, end_date=20250226T201819
+[2025-02-26T20:18:19.300+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 2 for task create_velib_station_status_table (duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_stations, 2200) already exists.
+; 181)
+[2025-02-26T20:18:19.306+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2025-02-26T20:18:19.321+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T20:21:48.298+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T20:21:48.309+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T20:21:48.310+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T20:21:48.310+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T20:21:48.310+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T20:21:48.319+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T20:21:48.323+0000] {standard_task_runner.py:55} INFO - Started process 187 to run task
+[2025-02-26T20:21:48.325+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpgkfi90zy']
+[2025-02-26T20:21:48.326+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T20:21:48.389+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host a5cd9f39530b
+[2025-02-26T20:21:48.438+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T20:21:48.439+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id BIGINT,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T20:21:48.446+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T20:21:48.594+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T20:21:48.596+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id BIGINT,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T20:21:48.603+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T202148, end_date=20250226T202148
+[2025-02-26T20:21:48.631+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T20:21:48.648+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T20:55:40.470+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T20:55:40.479+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T20:55:40.479+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T20:55:40.480+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T20:55:40.480+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T20:55:40.490+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T20:55:40.495+0000] {standard_task_runner.py:55} INFO - Started process 182 to run task
+[2025-02-26T20:55:40.497+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpremt40x4']
+[2025-02-26T20:55:40.499+0000] {standard_task_runner.py:83} INFO - Job 3: Subtask create_velib_station_status_table
+[2025-02-26T20:55:40.544+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host c6275f5db567
+[2025-02-26T20:55:40.587+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T20:55:40.587+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id BIGINT PRIMARY KEY,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T20:55:40.594+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T20:55:40.732+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T20:55:40.734+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id BIGINT PRIMARY KEY,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T20:55:40.739+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 338, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 369, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_stations, 2200) already exists.
+
+[2025-02-26T20:55:40.743+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T205540, end_date=20250226T205540
+[2025-02-26T20:55:40.749+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 3 for task create_velib_station_status_table (duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_stations, 2200) already exists.
+; 182)
+[2025-02-26T20:55:40.761+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2025-02-26T20:55:40.784+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T21:01:43.203+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T21:01:43.212+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T21:01:43.212+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T21:01:43.212+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T21:01:43.213+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T21:01:43.225+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T21:01:43.228+0000] {standard_task_runner.py:55} INFO - Started process 201 to run task
+[2025-02-26T21:01:43.230+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '2', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpo23l_3qw']
+[2025-02-26T21:01:43.232+0000] {standard_task_runner.py:83} INFO - Job 2: Subtask create_velib_station_status_table
+[2025-02-26T21:01:43.298+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 31a764ff7239
+[2025-02-26T21:01:43.350+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T21:01:43.351+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id BIGINT PRIMARY KEY,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T21:01:43.357+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T21:01:43.530+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T21:01:43.534+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id BIGINT PRIMARY KEY,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T21:01:43.549+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 338, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 369, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_stations, 2200) already exists.
+
+[2025-02-26T21:01:43.556+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T210143, end_date=20250226T210143
+[2025-02-26T21:01:43.565+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 2 for task create_velib_station_status_table (duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_stations, 2200) already exists.
+; 201)
+[2025-02-26T21:01:43.579+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2025-02-26T21:01:43.597+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T21:33:36.305+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T21:33:36.313+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T21:33:36.316+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T21:33:36.316+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T21:33:36.316+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T21:33:36.333+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T21:33:36.339+0000] {standard_task_runner.py:55} INFO - Started process 184 to run task
+[2025-02-26T21:33:36.341+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpatqkny4b']
+[2025-02-26T21:33:36.343+0000] {standard_task_runner.py:83} INFO - Job 3: Subtask create_velib_station_status_table
+[2025-02-26T21:33:36.441+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host caae8f3b540c
+[2025-02-26T21:33:36.503+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_velib_station_status_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T21:33:36.503+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id BIGINT PRIMARY KEY,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T21:33:36.511+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T21:33:36.703+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T21:33:36.707+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id BIGINT PRIMARY KEY,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T21:33:36.712+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 338, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 369, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_stations, 2200) already exists.
+
+[2025-02-26T21:33:36.720+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T213336, end_date=20250226T213336
+[2025-02-26T21:33:36.740+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 3 for task create_velib_station_status_table (duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_stations, 2200) already exists.
+; 184)
+[2025-02-26T21:33:36.774+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2025-02-26T21:33:36.805+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T22:45:17.776+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T22:45:17.785+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T22:45:17.785+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-26T22:45:17.793+0000] {taskinstance.py:1350} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T22:45:17.797+0000] {standard_task_runner.py:57} INFO - Started process 230 to run task
+[2025-02-26T22:45:17.800+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpcnby_yn4']
+[2025-02-26T22:45:17.802+0000] {standard_task_runner.py:85} INFO - Job 4: Subtask create_velib_station_status_table
+[2025-02-26T22:45:17.875+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 25e15728dc36
+[2025-02-26T22:45:17.958+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='create_velib_station_status_table' AIRFLOW_CTX_EXECUTION_DATE='2025-02-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-25T00:00:00+00:00'
+[2025-02-26T22:45:17.959+0000] {sql.py:262} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id BIGINT PRIMARY KEY,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            
+[2025-02-26T22:45:17.967+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T22:45:18.094+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T22:45:18.099+0000] {sql.py:375} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_stations(
+                station_id BIGINT PRIMARY KEY,
+                is_installed INT,
+                is_renting INT,
+                is_returning INT,
+                last_reported TIMESTAMP,
+                numBikesAvailable INT,
+                numDocksAvailable INT,
+                num_bikes_available INT,
+                num_ebikes_available INT,
+                num_mechanical_bikes_available INT,
+                num_docks_available INT
+            );
+            , parameters: None
+[2025-02-26T22:45:18.109+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250225T000000, start_date=20250226T224517, end_date=20250226T224518
+[2025-02-26T22:45:18.152+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-26T22:45:18.175+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

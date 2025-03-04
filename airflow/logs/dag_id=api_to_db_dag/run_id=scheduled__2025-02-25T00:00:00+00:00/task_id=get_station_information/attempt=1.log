@@ -1,0 +1,39 @@
+[2025-02-26T21:01:44.219+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.get_station_information scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T21:01:44.226+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.get_station_information scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T21:01:44.226+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T21:01:44.226+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T21:01:44.227+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T21:01:44.235+0000] {taskinstance.py:1304} INFO - Executing <Task(SimpleHttpOperator): get_station_information> on 2025-02-25 00:00:00+00:00
+[2025-02-26T21:01:44.238+0000] {standard_task_runner.py:55} INFO - Started process 205 to run task
+[2025-02-26T21:01:44.240+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'get_station_information', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '6', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpj2zkvezq']
+[2025-02-26T21:01:44.241+0000] {standard_task_runner.py:83} INFO - Job 6: Subtask get_station_information
+[2025-02-26T21:01:44.276+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.get_station_information scheduled__2025-02-25T00:00:00+00:00 [running]> on host 31a764ff7239
+[2025-02-26T21:01:44.313+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=get_station_information
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T21:01:44.313+0000] {http.py:123} INFO - Calling HTTP method
+[2025-02-26T21:01:44.318+0000] {base.py:73} INFO - Using connection ID 'velib_api_connection' for task execution.
+[2025-02-26T21:01:44.319+0000] {http.py:150} INFO - Sending 'GET' to url: https://velib-metropole-opendata.smovengo.cloud/opendata/Velib_Metropole/station_information.json
+[2025-02-26T21:01:44.475+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=get_station_information, execution_date=20250225T000000, start_date=20250226T210144, end_date=20250226T210144
+[2025-02-26T21:01:44.500+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T21:01:44.515+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T22:45:18.588+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.get_station_information scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T22:45:18.596+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.get_station_information scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T22:45:18.596+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-26T22:45:18.605+0000] {taskinstance.py:1350} INFO - Executing <Task(SimpleHttpOperator): get_station_information> on 2025-02-25 00:00:00+00:00
+[2025-02-26T22:45:18.608+0000] {standard_task_runner.py:57} INFO - Started process 252 to run task
+[2025-02-26T22:45:18.610+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'get_station_information', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp69wo6ylx']
+[2025-02-26T22:45:18.611+0000] {standard_task_runner.py:85} INFO - Job 8: Subtask get_station_information
+[2025-02-26T22:45:18.639+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.get_station_information scheduled__2025-02-25T00:00:00+00:00 [running]> on host 25e15728dc36
+[2025-02-26T22:45:18.683+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='get_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-25T00:00:00+00:00'
+[2025-02-26T22:45:18.683+0000] {http.py:123} INFO - Calling HTTP method
+[2025-02-26T22:45:18.688+0000] {base.py:73} INFO - Using connection ID 'velib_api_connection' for task execution.
+[2025-02-26T22:45:19.159+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=get_station_information, execution_date=20250225T000000, start_date=20250226T224518, end_date=20250226T224519
+[2025-02-26T22:45:19.198+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-26T22:45:19.218+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

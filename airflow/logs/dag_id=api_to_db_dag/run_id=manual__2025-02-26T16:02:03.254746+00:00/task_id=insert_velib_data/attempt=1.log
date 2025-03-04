@@ -1,0 +1,96 @@
+[2025-02-26T16:02:04.970+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.insert_velib_data manual__2025-02-26T16:02:03.254746+00:00 [queued]>
+[2025-02-26T16:02:04.975+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.insert_velib_data manual__2025-02-26T16:02:03.254746+00:00 [queued]>
+[2025-02-26T16:02:04.975+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T16:02:04.975+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T16:02:04.975+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T16:02:04.982+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): insert_velib_data> on 2025-02-26 16:02:03.254746+00:00
+[2025-02-26T16:02:04.984+0000] {standard_task_runner.py:55} INFO - Started process 195 to run task
+[2025-02-26T16:02:04.987+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'insert_velib_data', 'manual__2025-02-26T16:02:03.254746+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpxka6lexk']
+[2025-02-26T16:02:04.988+0000] {standard_task_runner.py:83} INFO - Job 7: Subtask insert_velib_data
+[2025-02-26T16:02:05.017+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.insert_velib_data manual__2025-02-26T16:02:03.254746+00:00 [running]> on host 9db23b9e0b5f
+[2025-02-26T16:02:05.087+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=insert_velib_data
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-26T16:02:03.254746+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-02-26T16:02:03.254746+00:00
+[2025-02-26T16:02:05.088+0000] {sql.py:253} INFO - Executing: 
+        INSERT INTO velib_station_status (
+            station_id,
+            is_installed,
+            is_renting,
+            is_returning,
+            last_reported,
+            numBikesAvailable,
+            numDocksAvailable,
+            num_bikes_available,
+            num_ebikes_available,
+            num_mechanical_bikes_available,
+            num_docks_available
+        ) VALUES (
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None
+        );
+
+        
+[2025-02-26T16:02:05.092+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T16:02:05.182+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T16:02:05.183+0000] {sql.py:364} INFO - Running statement: 
+        INSERT INTO velib_station_status (
+            station_id,
+            is_installed,
+            is_renting,
+            is_returning,
+            last_reported,
+            numBikesAvailable,
+            numDocksAvailable,
+            num_bikes_available,
+            num_ebikes_available,
+            num_mechanical_bikes_available,
+            num_docks_available
+        ) VALUES (
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None
+        );
+
+        , parameters: None
+[2025-02-26T16:02:05.184+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 338, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 369, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UndefinedColumn: column "none" does not exist
+LINE 15:             None,
+                     ^
+
+[2025-02-26T16:02:05.188+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=insert_velib_data, execution_date=20250226T160203, start_date=20250226T160204, end_date=20250226T160205
+[2025-02-26T16:02:05.193+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 7 for task insert_velib_data (column "none" does not exist
+LINE 15:             None,
+                     ^
+; 195)
+[2025-02-26T16:02:05.209+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2025-02-26T16:02:05.218+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,116 @@
+[2025-03-01T00:00:16.095+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.index_parquet_to_elasticsearch scheduled__2025-02-28T23:58:00+00:00 [queued]>
+[2025-03-01T00:00:16.100+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.index_parquet_to_elasticsearch scheduled__2025-02-28T23:58:00+00:00 [queued]>
+[2025-03-01T00:00:16.100+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-03-01T00:00:16.107+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): index_parquet_to_elasticsearch> on 2025-02-28 23:58:00+00:00
+[2025-03-01T00:00:16.110+0000] {standard_task_runner.py:57} INFO - Started process 2450 to run task
+[2025-03-01T00:00:16.113+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'index_parquet_to_elasticsearch', 'scheduled__2025-02-28T23:58:00+00:00', '--job-id', '17', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpisywaalh']
+[2025-03-01T00:00:16.115+0000] {standard_task_runner.py:85} INFO - Job 17: Subtask index_parquet_to_elasticsearch
+[2025-03-01T00:00:16.149+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.index_parquet_to_elasticsearch scheduled__2025-02-28T23:58:00+00:00 [running]> on host 379740b76498
+[2025-03-01T00:00:16.198+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='index_parquet_to_elasticsearch' AIRFLOW_CTX_EXECUTION_DATE='2025-02-28T23:58:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-28T23:58:00+00:00'
+[2025-03-01T00:00:16.236+0000] {logging_mixin.py:149} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/array_algos/replace.py:84 FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+[2025-03-01T00:00:16.281+0000] {base.py:271} INFO - HEAD http://elasticsearch:9200/velib_analytics [status:200 request:0.041s]
+[2025-03-01T00:00:26.303+0000] {base.py:299} WARNING - POST http://elasticsearch:9200/_bulk [status:N/A request:10.004s]
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.7/http/client.py", line 1373, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.7/http/client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.7/http/client.py", line 280, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/local/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 252, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/retry.py", line 525, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/packages/six.py", line 770, in reraise
+    raise value
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 451, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 341, in _raise_timeout
+    self, url, "Read timed out. (read timeout=%s)" % timeout_value
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='elasticsearch', port=9200): Read timed out. (read timeout=10)
+[2025-03-01T00:00:26.332+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 449, in _make_request
+    six.raise_from(e, None)
+  File "<string>", line 3, in raise_from
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 444, in _make_request
+    httplib_response = conn.getresponse()
+  File "/usr/local/lib/python3.7/http/client.py", line 1373, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.7/http/client.py", line 319, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.7/http/client.py", line 280, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/local/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+socket.timeout: timed out
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 252, in perform_request
+    method, url, body, retries=Retry(False), headers=request_headers, **kw
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    method, url, error=e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/util/retry.py", line 525, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/packages/six.py", line 770, in reraise
+    raise value
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 710, in urlopen
+    chunked=chunked,
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 451, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/home/airflow/.local/lib/python3.7/site-packages/urllib3/connectionpool.py", line 341, in _raise_timeout
+    self, url, "Read timed out. (read timeout=%s)" % timeout_value
+urllib3.exceptions.ReadTimeoutError: HTTPConnectionPool(host='elasticsearch', port=9200): Read timed out. (read timeout=10)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag.py", line 120, in index_parquet_to_elasticsearch
+    helpers.bulk(es, actions)
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/helpers/actions.py", line 411, in bulk
+    client, actions, ignore_status=ignore_status, *args, **kwargs
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/helpers/actions.py", line 339, in streaming_bulk
+    **kwargs
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/helpers/actions.py", line 256, in _process_bulk_chunk
+    for item in gen:
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/helpers/actions.py", line 195, in _process_bulk_chunk_error
+    raise error
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/helpers/actions.py", line 240, in _process_bulk_chunk
+    resp = client.bulk("\n".join(bulk_actions) + "\n", *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/client/utils.py", line 168, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/client/__init__.py", line 468, in bulk
+    body=body,
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/transport.py", line 415, in perform_request
+    raise e
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/transport.py", line 388, in perform_request
+    timeout=timeout,
+  File "/home/airflow/.local/lib/python3.7/site-packages/elasticsearch/connection/http_urllib3.py", line 265, in perform_request
+    raise ConnectionTimeout("TIMEOUT", str(e), e)
+elasticsearch.exceptions.ConnectionTimeout: ConnectionTimeout caused by - ReadTimeoutError(HTTPConnectionPool(host='elasticsearch', port=9200): Read timed out. (read timeout=10))
+[2025-03-01T00:00:26.356+0000] {taskinstance.py:1373} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=index_parquet_to_elasticsearch, execution_date=20250228T235800, start_date=20250301T000016, end_date=20250301T000026
+[2025-03-01T00:00:26.375+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 17 for task index_parquet_to_elasticsearch (ConnectionTimeout caused by - ReadTimeoutError(HTTPConnectionPool(host='elasticsearch', port=9200): Read timed out. (read timeout=10)); 2450)
+[2025-03-01T00:00:26.452+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2025-03-01T00:00:26.470+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

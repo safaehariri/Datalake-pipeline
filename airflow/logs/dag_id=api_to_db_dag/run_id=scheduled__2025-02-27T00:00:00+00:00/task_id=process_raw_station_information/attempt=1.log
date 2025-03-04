@@ -1,0 +1,112 @@
+[2025-02-28T12:31:46.704+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:31:46.716+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:31:46.716+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T12:31:46.728+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_station_information> on 2025-02-27 00:00:00+00:00
+[2025-02-28T12:31:46.738+0000] {standard_task_runner.py:57} INFO - Started process 4965 to run task
+[2025-02-28T12:31:46.742+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:46.751+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_station_information', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp0jea4aik']
+[2025-02-28T12:31:46.752+0000] {standard_task_runner.py:85} INFO - Job 13: Subtask process_raw_station_information
+[2025-02-28T12:31:46.797+0000] {clientserver.py:505} INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2025-02-28T12:31:46.801+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:46.805+0000] {java_gateway.py:1052} INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 507, in send_command
+    "Error while sending", e, proto.ERROR_ON_SEND)
+py4j.protocol.Py4JNetworkError: Error while sending
+[2025-02-28T12:31:46.811+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:46.827+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [running]> on host a0901dbddc07
+[2025-02-28T12:31:46.901+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T12:31:47.323+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T12:31:47.335+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_station_information, execution_date=20250227T000000, start_date=20250228T123146, end_date=20250228T123147
+[2025-02-28T12:31:47.371+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T12:31:47.388+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T12:38:35.200+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:38:35.211+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:38:35.211+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T12:38:35.222+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_station_information> on 2025-02-27 00:00:00+00:00
+[2025-02-28T12:38:35.226+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:38:35.226+0000] {standard_task_runner.py:57} INFO - Started process 2337 to run task
+[2025-02-28T12:38:35.247+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_station_information', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpiqmpo0_z']
+[2025-02-28T12:38:35.251+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask process_raw_station_information
+[2025-02-28T12:38:35.292+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [running]> on host 654b8dd452f4
+[2025-02-28T12:38:35.343+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T12:38:35.626+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T12:38:35.634+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_station_information, execution_date=20250227T000000, start_date=20250228T123835, end_date=20250228T123835
+[2025-02-28T12:38:35.657+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T12:38:35.676+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T13:00:50.095+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:00:50.107+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:00:50.108+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T13:00:50.120+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_station_information> on 2025-02-27 00:00:00+00:00
+[2025-02-28T13:00:50.127+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T13:00:50.126+0000] {standard_task_runner.py:57} INFO - Started process 2781 to run task
+[2025-02-28T13:00:50.136+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_station_information', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp6a1orepy']
+[2025-02-28T13:00:50.138+0000] {standard_task_runner.py:85} INFO - Job 13: Subtask process_raw_station_information
+[2025-02-28T13:00:50.181+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [running]> on host bedfa72ade93
+[2025-02-28T13:00:50.266+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T13:00:50.585+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T13:00:50.593+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_station_information, execution_date=20250227T000000, start_date=20250228T130050, end_date=20250228T130050
+[2025-02-28T13:00:50.640+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T13:00:50.676+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T13:24:14.652+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:24:14.658+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:24:14.659+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T13:24:14.669+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_station_information> on 2025-02-27 00:00:00+00:00
+[2025-02-28T13:24:14.672+0000] {standard_task_runner.py:57} INFO - Started process 2170 to run task
+[2025-02-28T13:24:14.672+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T13:24:14.678+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_station_information', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '10', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmprf1hottk']
+[2025-02-28T13:24:14.679+0000] {standard_task_runner.py:85} INFO - Job 10: Subtask process_raw_station_information
+[2025-02-28T13:24:14.710+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [running]> on host 1c784c6426d5
+[2025-02-28T13:24:14.760+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T13:24:15.113+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T13:24:15.121+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_station_information, execution_date=20250227T000000, start_date=20250228T132414, end_date=20250228T132415
+[2025-02-28T13:24:15.143+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T13:24:15.164+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T14:13:56.013+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T14:13:56.024+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T14:13:56.025+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T14:13:56.036+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_station_information> on 2025-02-27 00:00:00+00:00
+[2025-02-28T14:13:56.040+0000] {standard_task_runner.py:57} INFO - Started process 2548 to run task
+[2025-02-28T14:13:56.040+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T14:13:56.046+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_station_information', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '11', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmppho91aio']
+[2025-02-28T14:13:56.048+0000] {standard_task_runner.py:85} INFO - Job 11: Subtask process_raw_station_information
+[2025-02-28T14:13:56.085+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_station_information scheduled__2025-02-27T00:00:00+00:00 [running]> on host 2e469bce1432
+[2025-02-28T14:13:56.151+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T14:13:56.549+0000] {clientserver.py:505} INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2025-02-28T14:13:56.551+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T14:13:56.551+0000] {java_gateway.py:1052} INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 507, in send_command
+    "Error while sending", e, proto.ERROR_ON_SEND)
+py4j.protocol.Py4JNetworkError: Error while sending
+[2025-02-28T14:13:56.555+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T14:13:56.604+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T14:13:56.612+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_station_information, execution_date=20250227T000000, start_date=20250228T141356, end_date=20250228T141356
+[2025-02-28T14:13:56.635+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T14:13:56.669+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

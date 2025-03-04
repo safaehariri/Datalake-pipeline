@@ -1,0 +1,22 @@
+[2025-03-02T18:51:55.719+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information manual__2025-03-02T18:51:51.467622+00:00 [queued]>
+[2025-03-02T18:51:55.727+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information manual__2025-03-02T18:51:51.467622+00:00 [queued]>
+[2025-03-02T18:51:55.729+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-02T18:51:55.741+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_station_information> on 2025-03-02 18:51:51.467622+00:00
+[2025-03-02T18:51:55.746+0000] {standard_task_runner.py:57} INFO - Started process 10499 to run task
+[2025-03-02T18:51:55.750+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_station_information', 'manual__2025-03-02T18:51:51.467622+00:00', '--job-id', '137', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpvveexnbu']
+[2025-03-02T18:51:55.752+0000] {standard_task_runner.py:85} INFO - Job 137: Subtask process_raw_station_information
+[2025-03-02T18:51:55.783+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_station_information manual__2025-03-02T18:51:51.467622+00:00 [running]> on host 3befbd719c1b
+[2025-03-02T18:51:55.830+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T18:51:51.467622+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-02T18:51:51.467622+00:00'
+[2025-03-02T18:51:55.834+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/lib/utils.py", line 23, in process_files_in_directory
+    function(full_path)
+TypeError: format_station_details_data() missing 1 required positional argument: 'input_path'
+[2025-03-02T18:51:55.839+0000] {taskinstance.py:1373} INFO - Marking task as UP_FOR_RETRY. dag_id=api_to_db_dag, task_id=process_raw_station_information, execution_date=20250302T185151, start_date=20250302T185155, end_date=20250302T185155
+[2025-03-02T18:51:55.845+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 137 for task process_raw_station_information (format_station_details_data() missing 1 required positional argument: 'input_path'; 10499)
+[2025-03-02T18:51:55.889+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2025-03-02T18:51:55.906+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

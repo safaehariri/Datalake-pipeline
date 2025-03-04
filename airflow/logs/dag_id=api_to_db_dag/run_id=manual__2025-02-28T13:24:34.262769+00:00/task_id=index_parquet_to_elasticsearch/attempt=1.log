@@ -1,0 +1,90 @@
+[2025-02-28T13:24:54.800+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.index_parquet_to_elasticsearch manual__2025-02-28T13:24:34.262769+00:00 [queued]>
+[2025-02-28T13:24:54.804+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.index_parquet_to_elasticsearch manual__2025-02-28T13:24:34.262769+00:00 [queued]>
+[2025-02-28T13:24:54.805+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T13:24:54.812+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): index_parquet_to_elasticsearch> on 2025-02-28 13:24:34.262769+00:00
+[2025-02-28T13:24:54.815+0000] {standard_task_runner.py:57} INFO - Started process 4803 to run task
+[2025-02-28T13:24:54.817+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'index_parquet_to_elasticsearch', 'manual__2025-02-28T13:24:34.262769+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpd7prfb23']
+[2025-02-28T13:24:54.818+0000] {standard_task_runner.py:85} INFO - Job 24: Subtask index_parquet_to_elasticsearch
+[2025-02-28T13:24:54.847+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.index_parquet_to_elasticsearch manual__2025-02-28T13:24:34.262769+00:00 [running]> on host 1c784c6426d5
+[2025-02-28T13:24:54.889+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='index_parquet_to_elasticsearch' AIRFLOW_CTX_EXECUTION_DATE='2025-02-28T13:24:34.262769+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-28T13:24:34.262769+00:00'
+[2025-02-28T13:24:56.931+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag.py", line 32, in index_parquet_to_elasticsearch
+    .mode("overwrite") \
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/sql/readwriter.py", line 1396, in save
+    self._jwrite.save()
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1323, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/errors/exceptions/captured.py", line 169, in deco
+    return f(*a, **kw)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/protocol.py", line 328, in get_return_value
+    format(target_id, ".", name), value)
+py4j.protocol.Py4JJavaError: An error occurred while calling o35.save.
+: org.apache.spark.SparkClassNotFoundException: [DATA_SOURCE_NOT_FOUND] Failed to find the data source: org.elasticsearch.spark.sql. Please find packages at `https://spark.apache.org/third-party-projects.html`.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.dataSourceNotFoundError(QueryExecutionErrors.scala:738)
+	at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSource(DataSource.scala:647)
+	at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSourceV2(DataSource.scala:697)
+	at org.apache.spark.sql.DataFrameWriter.lookupV2Provider(DataFrameWriter.scala:860)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:256)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.ClassNotFoundException: org.elasticsearch.spark.sql.DefaultSource
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:476)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at org.apache.spark.sql.execution.datasources.DataSource$.$anonfun$lookupDataSource$5(DataSource.scala:633)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.sql.execution.datasources.DataSource$.$anonfun$lookupDataSource$4(DataSource.scala:633)
+	at scala.util.Failure.orElse(Try.scala:224)
+	at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSource(DataSource.scala:633)
+	... 16 more
+
+[2025-02-28T13:24:56.939+0000] {taskinstance.py:1373} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=index_parquet_to_elasticsearch, execution_date=20250228T132434, start_date=20250228T132454, end_date=20250228T132456
+[2025-02-28T13:24:56.946+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 24 for task index_parquet_to_elasticsearch (An error occurred while calling o35.save.
+: org.apache.spark.SparkClassNotFoundException: [DATA_SOURCE_NOT_FOUND] Failed to find the data source: org.elasticsearch.spark.sql. Please find packages at `https://spark.apache.org/third-party-projects.html`.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.dataSourceNotFoundError(QueryExecutionErrors.scala:738)
+	at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSource(DataSource.scala:647)
+	at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSourceV2(DataSource.scala:697)
+	at org.apache.spark.sql.DataFrameWriter.lookupV2Provider(DataFrameWriter.scala:860)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:256)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:247)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.ClassNotFoundException: org.elasticsearch.spark.sql.DefaultSource
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:476)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:594)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:527)
+	at org.apache.spark.sql.execution.datasources.DataSource$.$anonfun$lookupDataSource$5(DataSource.scala:633)
+	at scala.util.Try$.apply(Try.scala:213)
+	at org.apache.spark.sql.execution.datasources.DataSource$.$anonfun$lookupDataSource$4(DataSource.scala:633)
+	at scala.util.Failure.orElse(Try.scala:224)
+	at org.apache.spark.sql.execution.datasources.DataSource$.lookupDataSource(DataSource.scala:633)
+	... 16 more
+; 4803)
+[2025-02-28T13:24:56.970+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2025-02-28T13:24:56.981+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

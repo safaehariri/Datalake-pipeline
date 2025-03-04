@@ -1,0 +1,14 @@
+FROM bitnami/spark:latest
+
+# Installing wget and cleaning up in a single RUN to reduce layer size
+USER root
+RUN apt-get update && \
+    apt-get install -y wget && \
+    rm -rf /var/lib/apt/lists/*
+
+# Download the specific version of the Elasticsearch-Spark connector
+RUN wget https://repo1.maven.org/maven2/org/elasticsearch/elasticsearch-spark-30_2.12/8.17.2/elasticsearch-spark-30_2.12-8.17.2.jar -P /opt/spark/jars/ && \
+    chown 1001:1001 /opt/spark/jars/elasticsearch-spark-30_2.12-8.17.2.jar
+
+# Switch back to the non-root user
+USER 1001

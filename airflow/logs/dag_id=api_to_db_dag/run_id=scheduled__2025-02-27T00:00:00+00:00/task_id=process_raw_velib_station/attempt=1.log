@@ -1,0 +1,91 @@
+[2025-02-28T12:31:46.725+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:31:46.735+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:31:46.737+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T12:31:46.748+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_velib_station> on 2025-02-27 00:00:00+00:00
+[2025-02-28T12:31:46.753+0000] {standard_task_runner.py:57} INFO - Started process 4967 to run task
+[2025-02-28T12:31:46.753+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:46.759+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_velib_station', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '15', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpu7nop85y']
+[2025-02-28T12:31:46.761+0000] {standard_task_runner.py:85} INFO - Job 15: Subtask process_raw_velib_station
+[2025-02-28T12:31:46.792+0000] {clientserver.py:505} INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2025-02-28T12:31:46.795+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:46.796+0000] {java_gateway.py:1052} INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 507, in send_command
+    "Error while sending", e, proto.ERROR_ON_SEND)
+py4j.protocol.Py4JNetworkError: Error while sending
+[2025-02-28T12:31:46.801+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:46.827+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [running]> on host a0901dbddc07
+[2025-02-28T12:31:46.903+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_velib_station' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T12:31:47.329+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T12:31:47.337+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_velib_station, execution_date=20250227T000000, start_date=20250228T123146, end_date=20250228T123147
+[2025-02-28T12:31:47.387+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T12:31:47.408+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T12:38:35.326+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:38:35.332+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T12:38:35.332+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T12:38:35.340+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_velib_station> on 2025-02-27 00:00:00+00:00
+[2025-02-28T12:38:35.344+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:38:35.344+0000] {standard_task_runner.py:57} INFO - Started process 2339 to run task
+[2025-02-28T12:38:35.347+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_velib_station', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpevatza1j']
+[2025-02-28T12:38:35.349+0000] {standard_task_runner.py:85} INFO - Job 13: Subtask process_raw_velib_station
+[2025-02-28T12:38:35.394+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [running]> on host 654b8dd452f4
+[2025-02-28T12:38:35.450+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_velib_station' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T12:38:35.716+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T12:38:35.724+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_velib_station, execution_date=20250227T000000, start_date=20250228T123835, end_date=20250228T123835
+[2025-02-28T12:38:35.775+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T12:38:35.799+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T13:00:50.093+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:00:50.106+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:00:50.108+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T13:00:50.120+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_velib_station> on 2025-02-27 00:00:00+00:00
+[2025-02-28T13:00:50.126+0000] {standard_task_runner.py:57} INFO - Started process 2780 to run task
+[2025-02-28T13:00:50.126+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T13:00:50.135+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_velib_station', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpf8g9expb']
+[2025-02-28T13:00:50.137+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask process_raw_velib_station
+[2025-02-28T13:00:50.182+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [running]> on host bedfa72ade93
+[2025-02-28T13:00:50.261+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_velib_station' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T13:00:50.605+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T13:00:50.614+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_velib_station, execution_date=20250227T000000, start_date=20250228T130050, end_date=20250228T130050
+[2025-02-28T13:00:50.637+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T13:00:50.660+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T13:24:14.686+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:24:14.693+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T13:24:14.693+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T13:24:14.702+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_velib_station> on 2025-02-27 00:00:00+00:00
+[2025-02-28T13:24:14.705+0000] {standard_task_runner.py:57} INFO - Started process 2171 to run task
+[2025-02-28T13:24:14.705+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T13:24:14.710+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_velib_station', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpt89qvqol']
+[2025-02-28T13:24:14.711+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask process_raw_velib_station
+[2025-02-28T13:24:14.747+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [running]> on host 1c784c6426d5
+[2025-02-28T13:24:14.797+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_velib_station' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T13:24:15.141+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T13:24:15.148+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_velib_station, execution_date=20250227T000000, start_date=20250228T132414, end_date=20250228T132415
+[2025-02-28T13:24:15.173+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T13:24:15.194+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-28T14:13:56.976+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T14:13:56.982+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [queued]>
+[2025-02-28T14:13:56.982+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T14:13:56.990+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_velib_station> on 2025-02-27 00:00:00+00:00
+[2025-02-28T14:13:56.994+0000] {standard_task_runner.py:57} INFO - Started process 2879 to run task
+[2025-02-28T14:13:56.994+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T14:13:56.999+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_velib_station', 'scheduled__2025-02-27T00:00:00+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpyjr138qj']
+[2025-02-28T14:13:57.001+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask process_raw_velib_station
+[2025-02-28T14:13:57.036+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_velib_station scheduled__2025-02-27T00:00:00+00:00 [running]> on host 2e469bce1432
+[2025-02-28T14:13:57.088+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_velib_station' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-27T00:00:00+00:00'
+[2025-02-28T14:13:57.518+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T14:13:57.527+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_velib_station, execution_date=20250227T000000, start_date=20250228T141356, end_date=20250228T141357
+[2025-02-28T14:13:57.549+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T14:13:57.571+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

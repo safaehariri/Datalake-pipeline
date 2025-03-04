@@ -1,0 +1,66 @@
+[2025-02-27T11:49:08.306+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.create_station_informations_table manual__2025-02-27T11:49:06.090750+00:00 [queued]>
+[2025-02-27T11:49:08.321+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.create_station_informations_table manual__2025-02-27T11:49:06.090750+00:00 [queued]>
+[2025-02-27T11:49:08.323+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-27T11:49:08.344+0000] {taskinstance.py:1350} INFO - Executing <Task(PostgresOperator): create_station_informations_table> on 2025-02-27 11:49:06.090750+00:00
+[2025-02-27T11:49:08.368+0000] {standard_task_runner.py:57} INFO - Started process 188 to run task
+[2025-02-27T11:49:08.395+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_station_informations_table', 'manual__2025-02-27T11:49:06.090750+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmprq0l13mn']
+[2025-02-27T11:49:08.401+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask create_station_informations_table
+[2025-02-27T11:49:08.486+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.create_station_informations_table manual__2025-02-27T11:49:06.090750+00:00 [running]> on host 08791af1fcb0
+[2025-02-27T11:49:08.588+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='create_station_informations_table' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T11:49:06.090750+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-27T11:49:06.090750+00:00'
+[2025-02-27T11:49:08.588+0000] {sql.py:262} INFO - Executing: 
+            DO $$
+            BEGIN
+                -- Si la table n'existe pas, on s'assure que le type composite n'existe pas non plus
+                IF NOT EXISTS (
+                    SELECT 1 FROM information_schema.tables 
+                    WHERE table_schema = 'public' AND table_name = 'velib_station_details'
+                ) THEN
+                    IF EXISTS (
+                        SELECT 1 FROM pg_type WHERE typname = 'velib_station_details'
+                    ) THEN
+                        EXECUTE 'DROP TYPE velib_station_details CASCADE';
+                    END IF;
+                    EXECUTE '
+                        CREATE TABLE velib_station_details (
+                            station_id BIGINT PRIMARY KEY, 
+                            capacity INT,                   
+                            lat DOUBLE PRECISION,          
+                            lon DOUBLE PRECISION,           
+                            name VARCHAR(255)
+                        )
+                    ';
+                END IF;
+            END
+            $$;
+    
+[2025-02-27T11:49:08.595+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-27T11:49:08.709+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-27T11:49:08.716+0000] {sql.py:375} INFO - Running statement: 
+            DO $$
+            BEGIN
+                -- Si la table n'existe pas, on s'assure que le type composite n'existe pas non plus
+                IF NOT EXISTS (
+                    SELECT 1 FROM information_schema.tables 
+                    WHERE table_schema = 'public' AND table_name = 'velib_station_details'
+                ) THEN
+                    IF EXISTS (
+                        SELECT 1 FROM pg_type WHERE typname = 'velib_station_details'
+                    ) THEN
+                        EXECUTE 'DROP TYPE velib_station_details CASCADE';
+                    END IF;
+                    EXECUTE '
+                        CREATE TABLE velib_station_details (
+                            station_id BIGINT PRIMARY KEY, 
+                            capacity INT,                   
+                            lat DOUBLE PRECISION,          
+                            lon DOUBLE PRECISION,           
+                            name VARCHAR(255)
+                        )
+                    ';
+                END IF;
+            END
+            $$;
+    , parameters: None
+[2025-02-27T11:49:08.733+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_station_informations_table, execution_date=20250227T114906, start_date=20250227T114908, end_date=20250227T114908
+[2025-02-27T11:49:08.779+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-27T11:49:08.822+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

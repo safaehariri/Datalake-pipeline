@@ -1,0 +1,35 @@
+[2025-02-28T12:31:46.723+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station manual__2025-02-28T12:31:26.207595+00:00 [queued]>
+[2025-02-28T12:31:46.732+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_velib_station manual__2025-02-28T12:31:26.207595+00:00 [queued]>
+[2025-02-28T12:31:46.733+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-28T12:31:46.747+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_velib_station> on 2025-02-28 12:31:26.207595+00:00
+[2025-02-28T12:31:46.752+0000] {standard_task_runner.py:57} INFO - Started process 4966 to run task
+[2025-02-28T12:31:46.753+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:46.760+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_velib_station', 'manual__2025-02-28T12:31:26.207595+00:00', '--job-id', '14', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp88s_98ra']
+[2025-02-28T12:31:46.762+0000] {standard_task_runner.py:85} INFO - Job 14: Subtask process_raw_velib_station
+[2025-02-28T12:31:46.809+0000] {clientserver.py:505} INFO - Error while sending or receiving.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+[2025-02-28T12:31:46.811+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:46.812+0000] {java_gateway.py:1052} INFO - Exception while sending command.
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 503, in send_command
+    self.socket.sendall(command.encode("utf-8"))
+ConnectionResetError: [Errno 104] Connection reset by peer
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1038, in send_command
+    response = connection.send_command(command)
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/clientserver.py", line 507, in send_command
+    "Error while sending", e, proto.ERROR_ON_SEND)
+py4j.protocol.Py4JNetworkError: Error while sending
+[2025-02-28T12:31:46.815+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-28T12:31:46.829+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_velib_station manual__2025-02-28T12:31:26.207595+00:00 [running]> on host a0901dbddc07
+[2025-02-28T12:31:46.906+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_velib_station' AIRFLOW_CTX_EXECUTION_DATE='2025-02-28T12:31:26.207595+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-28T12:31:26.207595+00:00'
+[2025-02-28T12:31:47.329+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-02-28T12:31:47.337+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_velib_station, execution_date=20250228T123126, start_date=20250228T123146, end_date=20250228T123147
+[2025-02-28T12:31:47.392+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-28T12:31:47.425+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

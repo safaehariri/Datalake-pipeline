@@ -1,0 +1,130 @@
+[2025-02-26T21:01:43.206+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_station_informations_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T21:01:43.215+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_station_informations_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T21:01:43.215+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T21:01:43.215+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T21:01:43.215+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T21:01:43.226+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_station_informations_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T21:01:43.232+0000] {standard_task_runner.py:55} INFO - Started process 202 to run task
+[2025-02-26T21:01:43.235+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_station_informations_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp4ljermv_']
+[2025-02-26T21:01:43.237+0000] {standard_task_runner.py:83} INFO - Job 4: Subtask create_station_informations_table
+[2025-02-26T21:01:43.304+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_station_informations_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 31a764ff7239
+[2025-02-26T21:01:43.355+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_station_informations_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T21:01:43.355+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station_details (
+            station_id BIGINT PRIMARY KEY, 
+            capacity INT,                   
+            lat DOUBLE PRECISION,          
+            lon DOUBLE PRECISION,           
+            name VARCHAR(255)               
+        );
+        
+[2025-02-26T21:01:43.362+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T21:01:43.530+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T21:01:43.533+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station_details (
+            station_id BIGINT PRIMARY KEY, 
+            capacity INT,                   
+            lat DOUBLE PRECISION,          
+            lon DOUBLE PRECISION,           
+            name VARCHAR(255)               
+        );
+        , parameters: None
+[2025-02-26T21:01:43.550+0000] {taskinstance.py:1327} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_station_informations_table, execution_date=20250225T000000, start_date=20250226T210143, end_date=20250226T210143
+[2025-02-26T21:01:43.580+0000] {local_task_job.py:159} INFO - Task exited with return code 0
+[2025-02-26T21:01:43.612+0000] {taskinstance.py:2582} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T21:33:36.322+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_station_informations_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T21:33:36.331+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.create_station_informations_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T21:33:36.333+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T21:33:36.337+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T21:33:36.337+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T21:33:36.348+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): create_station_informations_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T21:33:36.351+0000] {standard_task_runner.py:55} INFO - Started process 186 to run task
+[2025-02-26T21:33:36.355+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_station_informations_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpqj_06al2']
+[2025-02-26T21:33:36.357+0000] {standard_task_runner.py:83} INFO - Job 5: Subtask create_station_informations_table
+[2025-02-26T21:33:36.434+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.create_station_informations_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host caae8f3b540c
+[2025-02-26T21:33:36.487+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=create_station_informations_table
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-25T00:00:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2025-02-25T00:00:00+00:00
+[2025-02-26T21:33:36.488+0000] {sql.py:253} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station_details (
+            station_id BIGINT PRIMARY KEY, 
+            capacity INT,                   
+            lat DOUBLE PRECISION,          
+            lon DOUBLE PRECISION,           
+            name VARCHAR(255)               
+        );
+        
+[2025-02-26T21:33:36.503+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T21:33:36.701+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T21:33:36.707+0000] {sql.py:364} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station_details (
+            station_id BIGINT PRIMARY KEY, 
+            capacity INT,                   
+            lat DOUBLE PRECISION,          
+            lon DOUBLE PRECISION,           
+            name VARCHAR(255)               
+        );
+        , parameters: None
+[2025-02-26T21:33:36.712+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 338, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 369, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_station_details, 2200) already exists.
+
+[2025-02-26T21:33:36.721+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=create_station_informations_table, execution_date=20250225T000000, start_date=20250226T213336, end_date=20250226T213336
+[2025-02-26T21:33:36.749+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 5 for task create_station_informations_table (duplicate key value violates unique constraint "pg_type_typname_nsp_index"
+DETAIL:  Key (typname, typnamespace)=(velib_station_details, 2200) already exists.
+; 186)
+[2025-02-26T21:33:36.786+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2025-02-26T21:33:36.823+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-02-26T22:45:17.778+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.create_station_informations_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T22:45:17.785+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.create_station_informations_table scheduled__2025-02-25T00:00:00+00:00 [queued]>
+[2025-02-26T22:45:17.785+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-26T22:45:17.794+0000] {taskinstance.py:1350} INFO - Executing <Task(PostgresOperator): create_station_informations_table> on 2025-02-25 00:00:00+00:00
+[2025-02-26T22:45:17.801+0000] {standard_task_runner.py:57} INFO - Started process 231 to run task
+[2025-02-26T22:45:17.805+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_station_informations_table', 'scheduled__2025-02-25T00:00:00+00:00', '--job-id', '3', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmplkrvp58_']
+[2025-02-26T22:45:17.808+0000] {standard_task_runner.py:85} INFO - Job 3: Subtask create_station_informations_table
+[2025-02-26T22:45:17.880+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.create_station_informations_table scheduled__2025-02-25T00:00:00+00:00 [running]> on host 25e15728dc36
+[2025-02-26T22:45:17.951+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='create_station_informations_table' AIRFLOW_CTX_EXECUTION_DATE='2025-02-25T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-02-25T00:00:00+00:00'
+[2025-02-26T22:45:17.951+0000] {sql.py:262} INFO - Executing: 
+            CREATE TABLE IF NOT EXISTS velib_station_details (
+            station_id BIGINT PRIMARY KEY, 
+            capacity INT,                   
+            lat DOUBLE PRECISION,          
+            lon DOUBLE PRECISION,           
+            name VARCHAR(255)               
+        );
+        
+[2025-02-26T22:45:17.961+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T22:45:18.094+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T22:45:18.098+0000] {sql.py:375} INFO - Running statement: 
+            CREATE TABLE IF NOT EXISTS velib_station_details (
+            station_id BIGINT PRIMARY KEY, 
+            capacity INT,                   
+            lat DOUBLE PRECISION,          
+            lon DOUBLE PRECISION,           
+            name VARCHAR(255)               
+        );
+        , parameters: None
+[2025-02-26T22:45:18.110+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_station_informations_table, execution_date=20250225T000000, start_date=20250226T224517, end_date=20250226T224518
+[2025-02-26T22:45:18.149+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-26T22:45:18.197+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

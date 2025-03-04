@@ -1,0 +1,25 @@
+[2025-03-02T15:54:42.709+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.combine_analyse_data manual__2025-03-02T15:54:34.077859+00:00 [queued]>
+[2025-03-02T15:54:42.714+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.combine_analyse_data manual__2025-03-02T15:54:34.077859+00:00 [queued]>
+[2025-03-02T15:54:42.714+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-02T15:54:42.722+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): combine_analyse_data> on 2025-03-02 15:54:34.077859+00:00
+[2025-03-02T15:54:42.726+0000] {standard_task_runner.py:57} INFO - Started process 4082 to run task
+[2025-03-02T15:54:42.729+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'combine_analyse_data', 'manual__2025-03-02T15:54:34.077859+00:00', '--job-id', '24', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp3bjwa3gd']
+[2025-03-02T15:54:42.732+0000] {standard_task_runner.py:85} INFO - Job 24: Subtask combine_analyse_data
+[2025-03-02T15:54:42.762+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.combine_analyse_data manual__2025-03-02T15:54:34.077859+00:00 [running]> on host 6ac034e0b044
+[2025-03-02T15:54:42.810+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='combine_analyse_data' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T15:54:34.077859+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-02T15:54:34.077859+00:00'
+[2025-03-02T15:54:44.890+0000] {logging_mixin.py:149} WARNING - /home/***/.local/lib/python3.7/site-packages/pyspark/context.py:317 FutureWarning: Python 3.7 support is deprecated in Spark 3.4.
+[2025-03-02T15:54:45.020+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/lib/data_combiner.py", line 37, in combine_data
+    latest_parquet_file = get_latest_parquet_file(current_day_directory)
+  File "/opt/airflow/lib/utils.py", line 6, in get_latest_parquet_file
+    files = [os.path.join(directory_path, f) for f in os.listdir(directory_path) if f.endswith('.parquet')]
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/data/formatted/velib_stations/20250302'
+[2025-03-02T15:54:45.033+0000] {taskinstance.py:1373} INFO - Marking task as UP_FOR_RETRY. dag_id=api_to_db_dag, task_id=combine_analyse_data, execution_date=20250302T155434, start_date=20250302T155442, end_date=20250302T155445
+[2025-03-02T15:54:45.043+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 24 for task combine_analyse_data ([Errno 2] No such file or directory: '/mnt/data/formatted/velib_stations/20250302'; 4082)
+[2025-03-02T15:54:45.082+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2025-03-02T15:54:45.109+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

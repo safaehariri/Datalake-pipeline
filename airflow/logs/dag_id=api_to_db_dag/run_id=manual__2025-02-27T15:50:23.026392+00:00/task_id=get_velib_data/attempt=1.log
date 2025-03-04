@@ -1,0 +1,14 @@
+[2025-02-27T15:50:25.150+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.get_velib_data manual__2025-02-27T15:50:23.026392+00:00 [queued]>
+[2025-02-27T15:50:25.155+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.get_velib_data manual__2025-02-27T15:50:23.026392+00:00 [queued]>
+[2025-02-27T15:50:25.155+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-27T15:50:25.163+0000] {taskinstance.py:1350} INFO - Executing <Task(SimpleHttpOperator): get_velib_data> on 2025-02-27 15:50:23.026392+00:00
+[2025-02-27T15:50:25.166+0000] {standard_task_runner.py:57} INFO - Started process 187 to run task
+[2025-02-27T15:50:25.169+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'get_velib_data', 'manual__2025-02-27T15:50:23.026392+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpqa97f9fn']
+[2025-02-27T15:50:25.171+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask get_velib_data
+[2025-02-27T15:50:25.201+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.get_velib_data manual__2025-02-27T15:50:23.026392+00:00 [running]> on host b95c8530fb6c
+[2025-02-27T15:50:25.244+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='get_velib_data' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T15:50:23.026392+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-27T15:50:23.026392+00:00'
+[2025-02-27T15:50:25.245+0000] {http.py:123} INFO - Calling HTTP method
+[2025-02-27T15:50:25.250+0000] {base.py:73} INFO - Using connection ID 'velib_api_connection' for task execution.
+[2025-02-27T15:50:25.494+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=get_velib_data, execution_date=20250227T155023, start_date=20250227T155025, end_date=20250227T155025
+[2025-02-27T15:50:25.512+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-27T15:50:25.528+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,29 @@
+[2025-02-27T22:45:39.807+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_daily_data manual__2025-02-27T22:45:19.852317+00:00 [queued]>
+[2025-02-27T22:45:39.813+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_daily_data manual__2025-02-27T22:45:19.852317+00:00 [queued]>
+[2025-02-27T22:45:39.814+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-27T22:45:39.825+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_daily_data> on 2025-02-27 22:45:19.852317+00:00
+[2025-02-27T22:45:39.834+0000] {clientserver.py:543} INFO - Closing down clientserver connection
+[2025-02-27T22:45:39.833+0000] {standard_task_runner.py:57} INFO - Started process 9685 to run task
+[2025-02-27T22:45:39.839+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_daily_data', 'manual__2025-02-27T22:45:19.852317+00:00', '--job-id', '98', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpekc7634t']
+[2025-02-27T22:45:39.841+0000] {standard_task_runner.py:85} INFO - Job 98: Subtask process_daily_data
+[2025-02-27T22:45:39.902+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_daily_data manual__2025-02-27T22:45:19.852317+00:00 [running]> on host 53fdc8261bae
+[2025-02-27T22:45:40.089+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_daily_data' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T22:45:19.852317+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-27T22:45:19.852317+00:00'
+[2025-02-27T22:45:42.857+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/dag.py", line 36, in combine_data
+    stations_df = spark.read.parquet("/mnt/data/formatted/velib_api/velib_stations/20250227/202502272223.snappy.parquet")
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/sql/readwriter.py", line 531, in parquet
+    return self._df(self._jreader.parquet(_to_seq(self._spark._sc, paths)))
+  File "/home/airflow/.local/lib/python3.7/site-packages/py4j/java_gateway.py", line 1323, in __call__
+    answer, self.gateway_client, self.target_id, self.name)
+  File "/home/airflow/.local/lib/python3.7/site-packages/pyspark/errors/exceptions/captured.py", line 175, in deco
+    raise converted from None
+pyspark.errors.exceptions.captured.AnalysisException: [PATH_NOT_FOUND] Path does not exist: file:/mnt/data/formatted/velib_api/velib_stations/20250227/202502272223.snappy.parquet.
+[2025-02-27T22:45:42.877+0000] {taskinstance.py:1373} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=process_daily_data, execution_date=20250227T224519, start_date=20250227T224539, end_date=20250227T224542
+[2025-02-27T22:45:42.889+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 98 for task process_daily_data ([PATH_NOT_FOUND] Path does not exist: file:/mnt/data/formatted/velib_api/velib_stations/20250227/202502272223.snappy.parquet.; 9685)
+[2025-02-27T22:45:42.910+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2025-02-27T22:45:42.932+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

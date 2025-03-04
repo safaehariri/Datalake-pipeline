@@ -1,0 +1,48 @@
+[2025-02-26T15:46:04.359+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.insert_velib_data manual__2025-02-26T15:46:01.753584+00:00 [queued]>
+[2025-02-26T15:46:04.364+0000] {taskinstance.py:1087} INFO - Dependencies all met for <TaskInstance: api_to_db_dag.insert_velib_data manual__2025-02-26T15:46:01.753584+00:00 [queued]>
+[2025-02-26T15:46:04.364+0000] {taskinstance.py:1283} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T15:46:04.364+0000] {taskinstance.py:1284} INFO - Starting attempt 1 of 1
+[2025-02-26T15:46:04.364+0000] {taskinstance.py:1285} INFO - 
+--------------------------------------------------------------------------------
+[2025-02-26T15:46:04.371+0000] {taskinstance.py:1304} INFO - Executing <Task(PostgresOperator): insert_velib_data> on 2025-02-26 15:46:01.753584+00:00
+[2025-02-26T15:46:04.373+0000] {standard_task_runner.py:55} INFO - Started process 370 to run task
+[2025-02-26T15:46:04.375+0000] {standard_task_runner.py:82} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'insert_velib_data', 'manual__2025-02-26T15:46:01.753584+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpl89cskvt']
+[2025-02-26T15:46:04.376+0000] {standard_task_runner.py:83} INFO - Job 7: Subtask insert_velib_data
+[2025-02-26T15:46:04.406+0000] {task_command.py:389} INFO - Running <TaskInstance: api_to_db_dag.insert_velib_data manual__2025-02-26T15:46:01.753584+00:00 [running]> on host 56549796aa94
+[2025-02-26T15:46:04.447+0000] {taskinstance.py:1513} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=api_to_db_dag
+AIRFLOW_CTX_TASK_ID=insert_velib_data
+AIRFLOW_CTX_EXECUTION_DATE=2025-02-26T15:46:01.753584+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=manual__2025-02-26T15:46:01.753584+00:00
+[2025-02-26T15:46:04.447+0000] {sql.py:253} INFO - Executing: 
+            INSERT INTO velib_station_status (columns...)
+            VALUES (None)
+        
+[2025-02-26T15:46:04.452+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T15:46:04.538+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-26T15:46:04.541+0000] {sql.py:364} INFO - Running statement: 
+            INSERT INTO velib_station_status (columns...)
+            VALUES (None)
+        , parameters: None
+[2025-02-26T15:46:04.541+0000] {taskinstance.py:1772} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/operators/sql.py", line 261, in execute
+    return_last=self.return_last,
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 338, in run
+    self._run_command(cur, sql_statement, parameters)
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/providers/common/sql/hooks/sql.py", line 369, in _run_command
+    cur.execute(sql_statement)
+psycopg2.errors.SyntaxError: syntax error at or near ".."
+LINE 2:             INSERT INTO velib_station_status (columns...)
+                                                             ^
+
+[2025-02-26T15:46:04.545+0000] {taskinstance.py:1327} INFO - Marking task as FAILED. dag_id=api_to_db_dag, task_id=insert_velib_data, execution_date=20250226T154601, start_date=20250226T154604, end_date=20250226T154604
+[2025-02-26T15:46:04.551+0000] {standard_task_runner.py:105} ERROR - Failed to execute job 7 for task insert_velib_data (syntax error at or near ".."
+LINE 2:             INSERT INTO velib_station_status (columns...)
+                                                             ^
+; 370)
+[2025-02-26T15:46:04.554+0000] {local_task_job.py:159} INFO - Task exited with return code 1
+[2025-02-26T15:46:04.564+0000] {taskinstance.py:2582} INFO - 0 downstream tasks scheduled from follow-on schedule check

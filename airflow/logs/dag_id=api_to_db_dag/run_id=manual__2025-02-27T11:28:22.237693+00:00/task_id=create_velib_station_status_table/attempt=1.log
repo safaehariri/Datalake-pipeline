@@ -1,0 +1,80 @@
+[2025-02-27T11:28:23.426+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.create_velib_station_status_table manual__2025-02-27T11:28:22.237693+00:00 [queued]>
+[2025-02-27T11:28:23.435+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.create_velib_station_status_table manual__2025-02-27T11:28:22.237693+00:00 [queued]>
+[2025-02-27T11:28:23.436+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 1
+[2025-02-27T11:28:23.448+0000] {taskinstance.py:1350} INFO - Executing <Task(PostgresOperator): create_velib_station_status_table> on 2025-02-27 11:28:22.237693+00:00
+[2025-02-27T11:28:23.452+0000] {standard_task_runner.py:57} INFO - Started process 406 to run task
+[2025-02-27T11:28:23.454+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'create_velib_station_status_table', 'manual__2025-02-27T11:28:22.237693+00:00', '--job-id', '12', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpocndrxif']
+[2025-02-27T11:28:23.456+0000] {standard_task_runner.py:85} INFO - Job 12: Subtask create_velib_station_status_table
+[2025-02-27T11:28:23.504+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.create_velib_station_status_table manual__2025-02-27T11:28:22.237693+00:00 [running]> on host 4e453fff3cdd
+[2025-02-27T11:28:23.558+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='create_velib_station_status_table' AIRFLOW_CTX_EXECUTION_DATE='2025-02-27T11:28:22.237693+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-02-27T11:28:22.237693+00:00'
+[2025-02-27T11:28:23.559+0000] {sql.py:262} INFO - Executing: 
+            DO $$
+            BEGIN
+                IF NOT EXISTS (
+                    SELECT 1 FROM information_schema.tables 
+                    WHERE table_schema = 'public' AND table_name = 'velib_stations'
+                ) THEN
+                    -- Si la table n'existe pas, on s'assure que le type composite n'existe pas non plus
+                    IF EXISTS (
+                        SELECT 1 FROM pg_type WHERE typname = 'velib_stations'
+                    ) THEN
+                        EXECUTE 'DROP TYPE velib_stations CASCADE';
+                    END IF;
+                    EXECUTE '
+                        CREATE TABLE velib_stations(
+                            station_id BIGINT PRIMARY KEY,
+                            is_installed INT,
+                            is_renting INT,
+                            is_returning INT,
+                            last_reported TIMESTAMP,
+                            numBikesAvailable INT,
+                            numDocksAvailable INT,
+                            num_bikes_available INT,
+                            num_ebikes_available INT,
+                            num_mechanical_bikes_available INT,
+                            num_docks_available INT
+                        )
+                    ';
+                END IF;
+            END
+            $$;
+
+            
+[2025-02-27T11:28:23.564+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-27T11:28:23.606+0000] {base.py:73} INFO - Using connection ID 'postgres_default' for task execution.
+[2025-02-27T11:28:23.609+0000] {sql.py:375} INFO - Running statement: 
+            DO $$
+            BEGIN
+                IF NOT EXISTS (
+                    SELECT 1 FROM information_schema.tables 
+                    WHERE table_schema = 'public' AND table_name = 'velib_stations'
+                ) THEN
+                    -- Si la table n'existe pas, on s'assure que le type composite n'existe pas non plus
+                    IF EXISTS (
+                        SELECT 1 FROM pg_type WHERE typname = 'velib_stations'
+                    ) THEN
+                        EXECUTE 'DROP TYPE velib_stations CASCADE';
+                    END IF;
+                    EXECUTE '
+                        CREATE TABLE velib_stations(
+                            station_id BIGINT PRIMARY KEY,
+                            is_installed INT,
+                            is_renting INT,
+                            is_returning INT,
+                            last_reported TIMESTAMP,
+                            numBikesAvailable INT,
+                            numDocksAvailable INT,
+                            num_bikes_available INT,
+                            num_ebikes_available INT,
+                            num_mechanical_bikes_available INT,
+                            num_docks_available INT
+                        )
+                    ';
+                END IF;
+            END
+            $$;
+
+            , parameters: None
+[2025-02-27T11:28:23.632+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=create_velib_station_status_table, execution_date=20250227T112822, start_date=20250227T112823, end_date=20250227T112823
+[2025-02-27T11:28:23.640+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-02-27T11:28:23.671+0000] {taskinstance.py:2674} INFO - 1 downstream tasks scheduled from follow-on schedule check

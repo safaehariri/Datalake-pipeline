@@ -1,0 +1,38 @@
+[2025-03-01T22:45:17.828+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.index_data_to_elasticsearch scheduled__2025-03-01T22:30:00+00:00 [queued]>
+[2025-03-01T22:45:17.833+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.index_data_to_elasticsearch scheduled__2025-03-01T22:30:00+00:00 [queued]>
+[2025-03-01T22:45:17.833+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-01T22:45:17.840+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): index_data_to_elasticsearch> on 2025-03-01 22:30:00+00:00
+[2025-03-01T22:45:17.843+0000] {standard_task_runner.py:57} INFO - Started process 20154 to run task
+[2025-03-01T22:45:17.846+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'index_data_to_elasticsearch', 'scheduled__2025-03-01T22:30:00+00:00', '--job-id', '494', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpbu3_alui']
+[2025-03-01T22:45:17.847+0000] {standard_task_runner.py:85} INFO - Job 494: Subtask index_data_to_elasticsearch
+[2025-03-01T22:45:17.878+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.index_data_to_elasticsearch scheduled__2025-03-01T22:30:00+00:00 [running]> on host 7d0564f8eb8b
+[2025-03-01T22:45:17.928+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='index_data_to_elasticsearch' AIRFLOW_CTX_EXECUTION_DATE='2025-03-01T22:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-01T22:30:00+00:00'
+[2025-03-01T22:45:17.929+0000] {taskinstance.py:1847} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 181, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 198, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+TypeError: index_parquet_to_elasticsearch() missing 1 required positional argument: 'task_id'
+[2025-03-01T22:45:17.933+0000] {taskinstance.py:1373} INFO - Marking task as UP_FOR_RETRY. dag_id=api_to_db_dag, task_id=index_data_to_elasticsearch, execution_date=20250301T223000, start_date=20250301T224517, end_date=20250301T224517
+[2025-03-01T22:45:17.938+0000] {standard_task_runner.py:109} ERROR - Failed to execute job 494 for task index_data_to_elasticsearch (index_parquet_to_elasticsearch() missing 1 required positional argument: 'task_id'; 20154)
+[2025-03-01T22:45:17.946+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 1
+[2025-03-01T22:45:17.959+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-03-01T22:47:55.187+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.index_data_to_elasticsearch scheduled__2025-03-01T22:30:00+00:00 [queued]>
+[2025-03-01T22:47:55.193+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.index_data_to_elasticsearch scheduled__2025-03-01T22:30:00+00:00 [queued]>
+[2025-03-01T22:47:55.193+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-01T22:47:55.200+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): index_data_to_elasticsearch> on 2025-03-01 22:30:00+00:00
+[2025-03-01T22:47:55.204+0000] {standard_task_runner.py:57} INFO - Started process 22644 to run task
+[2025-03-01T22:47:55.207+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'index_data_to_elasticsearch', 'scheduled__2025-03-01T22:30:00+00:00', '--job-id', '510', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmp1r_yw1wi']
+[2025-03-01T22:47:55.209+0000] {standard_task_runner.py:85} INFO - Job 510: Subtask index_data_to_elasticsearch
+[2025-03-01T22:47:55.242+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.index_data_to_elasticsearch scheduled__2025-03-01T22:30:00+00:00 [running]> on host 7d0564f8eb8b
+[2025-03-01T22:47:55.296+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='index_data_to_elasticsearch' AIRFLOW_CTX_EXECUTION_DATE='2025-03-01T22:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-03-01T22:30:00+00:00'
+[2025-03-01T22:47:55.331+0000] {logging_mixin.py:149} WARNING - /home/***/.local/lib/python3.7/site-packages/pandas/core/array_algos/replace.py:84 FutureWarning: elementwise comparison failed; returning scalar instead, but in the future will perform elementwise comparison
+[2025-03-01T22:47:55.342+0000] {base.py:271} INFO - HEAD http://elasticsearch:9200/velib_analytics [status:200 request:0.007s]
+[2025-03-01T22:47:55.388+0000] {base.py:271} INFO - POST http://elasticsearch:9200/_bulk [status:200 request:0.029s]
+[2025-03-01T22:47:55.412+0000] {base.py:271} INFO - POST http://elasticsearch:9200/_bulk [status:200 request:0.016s]
+[2025-03-01T22:47:55.432+0000] {base.py:271} INFO - POST http://elasticsearch:9200/_bulk [status:200 request:0.013s]
+[2025-03-01T22:47:55.434+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-03-01T22:47:55.442+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=index_data_to_elasticsearch, execution_date=20250301T223000, start_date=20250301T224755, end_date=20250301T224755
+[2025-03-01T22:47:55.470+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-03-01T22:47:55.483+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,137 @@
+[2025-03-02T18:54:45.541+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information manual__2025-03-02T18:54:40.633475+00:00 [queued]>
+[2025-03-02T18:54:45.548+0000] {taskinstance.py:1125} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: api_to_db_dag.process_raw_station_information manual__2025-03-02T18:54:40.633475+00:00 [queued]>
+[2025-03-02T18:54:45.550+0000] {taskinstance.py:1331} INFO - Starting attempt 1 of 2
+[2025-03-02T18:54:45.561+0000] {taskinstance.py:1350} INFO - Executing <Task(PythonOperator): process_raw_station_information> on 2025-03-02 18:54:40.633475+00:00
+[2025-03-02T18:54:45.565+0000] {standard_task_runner.py:57} INFO - Started process 10669 to run task
+[2025-03-02T18:54:45.570+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'api_to_db_dag', 'process_raw_station_information', 'manual__2025-03-02T18:54:40.633475+00:00', '--job-id', '144', '--raw', '--subdir', 'DAGS_FOLDER/dag.py', '--cfg-path', '/tmp/tmpg9dsp41k']
+[2025-03-02T18:54:45.573+0000] {standard_task_runner.py:85} INFO - Job 144: Subtask process_raw_station_information
+[2025-03-02T18:54:45.611+0000] {task_command.py:410} INFO - Running <TaskInstance: api_to_db_dag.process_raw_station_information manual__2025-03-02T18:54:40.633475+00:00 [running]> on host 3befbd719c1b
+[2025-03-02T18:54:45.695+0000] {taskinstance.py:1570} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='api_to_db_dag' AIRFLOW_CTX_TASK_ID='process_raw_station_information' AIRFLOW_CTX_EXECUTION_DATE='2025-03-02T18:54:40.633475+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-03-02T18:54:40.633475+00:00'
+[2025-03-02T18:54:48.237+0000] {logging_mixin.py:149} WARNING - /home/***/.local/lib/python3.7/site-packages/pyspark/context.py:317 FutureWarning: Python 3.7 support is deprecated in Spark 3.4.
+[2025-03-02T18:54:52.610+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012130.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#98]
++- Relation [_corrupt_record#96] json
+[2025-03-02T18:54:52.712+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012219.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#110]
++- Relation [_corrupt_record#108] json
+[2025-03-02T18:54:55.555+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012330.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#694]
++- Relation [_corrupt_record#692] json
+[2025-03-02T18:54:55.633+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012100.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#706]
++- Relation [_corrupt_record#704] json
+[2025-03-02T18:54:56.677+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012245.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#894]
++- Relation [_corrupt_record#892] json
+[2025-03-02T18:54:56.775+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012300.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#906]
++- Relation [_corrupt_record#904] json
+[2025-03-02T18:54:58.665+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012315.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1358]
++- Relation [_corrupt_record#1356] json
+[2025-03-02T18:54:59.703+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012123.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1590]
++- Relation [_corrupt_record#1588] json
+[2025-03-02T18:55:01.144+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012247.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1866]
++- Relation [_corrupt_record#1864] json
+[2025-03-02T18:55:01.460+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012221.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#1922]
++- Relation [_corrupt_record#1920] json
+[2025-03-02T18:55:02.573+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012201.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#2198]
++- Relation [_corrupt_record#2196] json
+[2025-03-02T18:55:02.712+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012145.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#2210]
++- Relation [_corrupt_record#2208] json
+[2025-03-02T18:55:03.114+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012056.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#2310]
++- Relation [_corrupt_record#2308] json
+[2025-03-02T18:55:03.656+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012216.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#2454]
++- Relation [_corrupt_record#2452] json
+[2025-03-02T18:55:03.863+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012236.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#2510]
++- Relation [_corrupt_record#2508] json
+[2025-03-02T18:55:04.184+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250301/202503012220.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#2566]
++- Relation [_corrupt_record#2564] json
+[2025-03-02T18:55:27.223+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021851.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9222]
++- Relation [_corrupt_record#9220] json
+[2025-03-02T18:55:27.284+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021345.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9234]
++- Relation [_corrupt_record#9232] json
+[2025-03-02T18:55:27.366+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021715.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9246]
++- Relation [_corrupt_record#9244] json
+[2025-03-02T18:55:27.459+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021830.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9258]
++- Relation [_corrupt_record#9256] json
+[2025-03-02T18:55:27.582+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021430.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9270]
++- Relation [_corrupt_record#9268] json
+[2025-03-02T18:55:27.649+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021630.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9282]
++- Relation [_corrupt_record#9280] json
+[2025-03-02T18:55:27.715+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021734.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9294]
++- Relation [_corrupt_record#9292] json
+[2025-03-02T18:55:27.782+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021554.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9306]
++- Relation [_corrupt_record#9304] json
+[2025-03-02T18:55:27.885+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021800.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9318]
++- Relation [_corrupt_record#9316] json
+[2025-03-02T18:55:27.980+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021400.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9330]
++- Relation [_corrupt_record#9328] json
+[2025-03-02T18:55:28.070+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021745.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9342]
++- Relation [_corrupt_record#9340] json
+[2025-03-02T18:55:28.134+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021600.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9354]
++- Relation [_corrupt_record#9352] json
+[2025-03-02T18:55:28.213+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021548.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9366]
++- Relation [_corrupt_record#9364] json
+[2025-03-02T18:55:28.506+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021530.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9378]
++- Relation [_corrupt_record#9376] json
+[2025-03-02T18:55:29.062+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021615.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9390]
++- Relation [_corrupt_record#9388] json
+[2025-03-02T18:55:29.343+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021854.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9402]
++- Relation [_corrupt_record#9400] json
+[2025-03-02T18:55:29.503+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021815.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9414]
++- Relation [_corrupt_record#9412] json
+[2025-03-02T18:55:29.599+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021527.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9426]
++- Relation [_corrupt_record#9424] json
+[2025-03-02T18:55:29.666+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021516.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9438]
++- Relation [_corrupt_record#9436] json
+[2025-03-02T18:55:29.755+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021845.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9450]
++- Relation [_corrupt_record#9448] json
+[2025-03-02T18:55:29.849+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021500.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9462]
++- Relation [_corrupt_record#9460] json
+[2025-03-02T18:55:29.908+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021445.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9474]
++- Relation [_corrupt_record#9472] json
+[2025-03-02T18:55:29.974+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021645.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9486]
++- Relation [_corrupt_record#9484] json
+[2025-03-02T18:55:30.035+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021700.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9498]
++- Relation [_corrupt_record#9496] json
+[2025-03-02T18:55:30.108+0000] {logging_mixin.py:149} INFO - Error processing file /mnt/data/raw/velib_api/station_information/20250302/202503021429.json: [UNRESOLVED_COLUMN.WITH_SUGGESTION] A column or function parameter with name `data`.`stations` cannot be resolved. Did you mean one of the following? [`_corrupt_record`].; line 1 pos 8;
+'Project ['explode('data.stations) AS station#9510]
++- Relation [_corrupt_record#9508] json
+[2025-03-02T18:55:30.109+0000] {python.py:183} INFO - Done. Returned value was: None
+[2025-03-02T18:55:30.144+0000] {taskinstance.py:1373} INFO - Marking task as SUCCESS. dag_id=api_to_db_dag, task_id=process_raw_station_information, execution_date=20250302T185440, start_date=20250302T185445, end_date=20250302T185530
+[2025-03-02T18:55:30.215+0000] {local_task_job_runner.py:232} INFO - Task exited with return code 0
+[2025-03-02T18:55:30.306+0000] {taskinstance.py:2674} INFO - 0 downstream tasks scheduled from follow-on schedule check
